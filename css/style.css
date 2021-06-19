@@ -1,0 +1,13 @@
+.listItems {
+    width: 25%;
+    margin: 10px;
+    padding: 10px;
+    border: 2px solid teal;
+    border-radius: 10px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.listItems:hover {
+    background-color: paleturquoise;
+    cursor: grab;
+}
