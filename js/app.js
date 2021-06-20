@@ -11,7 +11,7 @@ function addListItems(season, list, seasonClass) {
         list.forEach((item)=> {
             let div = document.createElement('div');
             div.innerHTML = item;
-            div.classList = seasonClass;
+            div.classList = "listItems " + seasonClass;
             document.getElementById('newItems').appendChild(div);
         });
     }
@@ -23,6 +23,6 @@ selection.addEventListener('change', (event) => {
     addListItems('winter', winterList, 'winterClass');
     addListItems('spring', springList, 'springClass');
     addListItems('summer', summerList, 'summerClass');
-    addListItems('fall', fallList, 'winterClass');
+    addListItems('fall', fallList, 'fallClass');
 });
 

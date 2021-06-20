@@ -1,13 +1,62 @@
+/*----------------------------------------*/
+/*      Auto-Generated Activities */
+/*----------------------------------------*/
 .listItems {
     width: 25%;
     margin: 10px;
     padding: 10px;
-    border: 2px solid teal;
     border-radius: 10px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .listItems:hover {
-    background-color: paleturquoise;
     cursor: grab;
+}
+
+/* Winter- XMas */
+.xmasClass {
+    border: 2px solid red; 
+}
+
+.xmasClass:hover {
+    background-color: limegreen;     
+    color: white;
+}
+
+/* Winter- Secular */
+.winterClass {
+    border: 2px solid teal; 
+}
+
+.winterClass:hover {
+    background-color: paleturquoise; 
+
+}
+
+/* Spring */
+.springClass {
+    border: 2px solid darkorchid; 
+}
+
+.springClass:hover {
+    background-color: lavender; 
+}
+
+/* Summer */
+.summerClass {
+    border: 2px solid orange; 
+}
+
+.summerClass:hover {
+    background-color: lemonchiffon; 
+}
+
+/* Fall */
+.fallClass {
+    border: 2px solid maroon; 
+}
+
+.fallClass:hover {
+    background-color: peru; 
+    color: white;
 }
