@@ -1,8 +1,8 @@
-import { xmasList } from "./xmas";
-import { winterList } from "./winter";
-import { springList } from "./spring";
-import { summerList } from "./summer"
-import { fallList } from "./fall";
+import { xmasList } from "./xmas.js";
+import { winterList } from "./winter.js";
+import { springList } from "./spring.js";
+import { summerList } from "./summer.js"
+import { fallList } from "./fall.js";
 
 const selection = document.getElementById('seasonSelect');
 
