@@ -1,0 +1,19 @@
+{
+  "name": "bucket-list",
+  "version": "1.0.0",
+  "description": "\"Make a seasonal bucket list\"",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Eleanor-Shellstrop/bucket-list.git"
+  },
+  "author": "\"Anne Ensign\"",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Eleanor-Shellstrop/bucket-list/issues"
+  },
+  "homepage": "https://github.com/Eleanor-Shellstrop/bucket-list#readme"
+}
