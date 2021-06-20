@@ -6,6 +6,23 @@ import { fallList } from "./fall.js";
 
 const selection = document.getElementById('seasonSelect');
 
+function changeHeader () {
+    const header = document.getElementById('header');
+    if (selection.value === 'xmas') {
+        header.innerHTML = "Winter Bucket List (with Christmas)"
+    } else if (selection.value === 'winter') {
+        header.innerHTML = "Winter Bucket List"
+    } else if (selection.value === 'spring') {
+        header.innerHTML = "Spring Bucket List"
+    } else if (selection.value === 'summer') {
+        header.innerHTML = "Summer Bucket List"
+    } else if (selection.value === 'fall') {
+        header.innerHTML = "Fall Bucket List"
+    } else {
+        return; 
+    }
+}
+
 function addListItems(season, list, seasonClass) {
     if (selection.value === season) {
         list.forEach((item)=> {
@@ -19,6 +36,7 @@ function addListItems(season, list, seasonClass) {
 
 selection.addEventListener('change', (event) => {
     document.getElementById('newItems').innerHTML = '';
+    changeHeader();
     addListItems('xmas', xmasList, 'xmasClass');
     addListItems('winter', winterList, 'winterClass');
     addListItems('spring', springList, 'springClass');
