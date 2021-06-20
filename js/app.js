@@ -23,6 +23,17 @@ function changeHeader () {
     }
 }
 
+    const titleForm = document.getElementById('addTitle');
+    const titleInput = titleForm.querySelector('input');
+    const listHeader = document.getElementById('listHeader');
+
+
+titleForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    listHeader.innerHTML = titleInput.value;
+    titleInput.value = '';
+})
+
 function addListItems(season, list, seasonClass) {
     if (selection.value === season) {
         list.forEach((item)=> {

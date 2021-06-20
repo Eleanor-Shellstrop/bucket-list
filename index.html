@@ -10,6 +10,14 @@
 <body>
     <header>
         <h1 id="header">Season Bucket List</h1>
+        <form id="addTitle">
+            <input type="text" name="title" placeholder="Name Your List">
+            <button type="submit" name="title-submit" value="submit">Name</button>
+        </form>
+        <form id="addActivity">
+            <input type="text" name="activity" placeholder="What Do You Want to Do?">
+            <button type="submit" name="activity-submit" value="submit">Add</button>
+        </form>
     </header>
     <main>
         <label for="seasonSelect">Select a Season</label>
@@ -21,6 +29,8 @@
             <option value="summer">Summer</option>
             <option value="fall">Fall</option>
         </select>
+        <h2 id="listHeader">My Bucket List</h2>
+        <div id="myList"></div>
     </main>
     <div id="newItems"></div>
     <script type="module" src="./js/app.js"></script>
