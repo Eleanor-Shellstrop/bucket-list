@@ -1,6 +1,11 @@
 /*----------------------------------------*/
 /*              GENERAL                   */
 /*----------------------------------------*/
+
+* {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
 main {
     margin-top: 30px;
 }
@@ -29,11 +34,19 @@ form {
 }
 
 .bucketList {
-    width: 100px;
-    height: 100px;
+    min-width: 100px;
+    min-height: 100px;
+    display: flex;
+    flex-direction: column;
     margin: 10px auto;
     padding: 20px;
     background-color: lightskyblue;
+}
+
+span {
+    font-size: 1.25em;
+    margin-bottom: 20%;
+    font-weight: bold;
 }
 
 /*----------------------------------------*/

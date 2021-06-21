@@ -55,8 +55,16 @@ activityForm.addEventListener('submit', (e) => {
     e.preventDefault();
     const listDiv = document.createElement('div');
     listDiv.classList = "bucketList";
-    listDiv.innerText = activityInput.value;
+    const span = document.createElement('span');
+    span.innerText = activityInput.value;
+    listDiv.appendChild(span);
+    const label = document.createElement('label');
+    label.innerText = "Completed";
+    const check = document.createElement('input');
+    check.type = "checkbox";
     document.getElementById('userList').appendChild(listDiv);
+    listDiv.appendChild(label);
+    label.appendChild(check);
     activityInput.value = '';
 })
 
