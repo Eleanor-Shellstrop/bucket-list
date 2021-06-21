@@ -24,6 +24,18 @@ form {
     background-color: lightgray;
 }
 
+#userList {
+    display: flex;
+}
+
+.bucketList {
+    width: 100px;
+    height: 100px;
+    margin: 10px auto;
+    padding: 20px;
+    background-color: lightskyblue;
+}
+
 /*----------------------------------------*/
 /*      Auto-Generated Activities         */
 /*----------------------------------------*/

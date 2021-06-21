@@ -51,6 +51,15 @@ titleForm.addEventListener('submit', (e) => {
 const activityForm = document.getElementById('addActivity');
 const activityInput = activityForm.querySelector('input');
 
+activityForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const listDiv = document.createElement('div');
+    listDiv.classList = "bucketList";
+    listDiv.innerText = activityInput.value;
+    document.getElementById('userList').appendChild(listDiv);
+    activityInput.value = '';
+})
+
 //-------------------------------------------------------------------
 //      SELECT A SEASON DROPDOWN
 //-------------------------------------------------------------------
