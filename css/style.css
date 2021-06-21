@@ -86,3 +86,12 @@ form {
     background-color: peru; 
     color: white;
 }
+
+/* Any */
+.allSeasons {
+    border: 2px solid rgb(2, 189, 2); 
+}
+
+.allSeasons:hover {
+    background-color: rgb(192, 247, 192); 
+}

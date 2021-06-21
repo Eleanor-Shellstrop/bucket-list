@@ -1,15 +1,21 @@
+//-------------------------------------------------------------------
+//      IMPORTS
+//-------------------------------------------------------------------
+
 import { xmasList } from "./xmas.js";
 import { winterList } from "./winter.js";
 import { springList } from "./spring.js";
 import { summerList } from "./summer.js"
 import { fallList } from "./fall.js";
+import { activityAnySeason } from "./anytime.js";
 
-const selection = document.getElementById('seasonSelect');
-
+//-------------------------------------------------------------------
+//      CHANGE THE H1 WITH SELECTION INPUT
+//-------------------------------------------------------------------
 function changeHeader () {
     const header = document.getElementById('header');
     if (selection.value === 'xmas') {
-        header.innerHTML = "Winter Bucket List (with Christmas)"
+        header.innerHTML = "Christmas Bucket List"
     } else if (selection.value === 'winter') {
         header.innerHTML = "Winter Bucket List"
     } else if (selection.value === 'spring') {
@@ -23,16 +29,33 @@ function changeHeader () {
     }
 }
 
-    const titleForm = document.getElementById('addTitle');
-    const titleInput = titleForm.querySelector('input');
-    const listHeader = document.getElementById('listHeader');
+//-------------------------------------------------------------------
+//      CHANGE LIST TITLE BY USER INPUT
+//-------------------------------------------------------------------
+
+const titleForm = document.getElementById('addTitle');
+const titleInput = titleForm.querySelector('input');
+const listHeader = document.getElementById('listHeader');
 
 
 titleForm.addEventListener('submit', (e) => {
     e.preventDefault();
     listHeader.innerHTML = titleInput.value;
     titleInput.value = '';
-})
+});
+
+//-------------------------------------------------------------------
+//      ADD A BUCKET LIST ITEM
+//-------------------------------------------------------------------
+
+const activityForm = document.getElementById('addActivity');
+const activityInput = activityForm.querySelector('input');
+
+//-------------------------------------------------------------------
+//      SELECT A SEASON DROPDOWN
+//-------------------------------------------------------------------
+
+const selection = document.getElementById('seasonSelect');
 
 function addListItems(season, list, seasonClass) {
     if (selection.value === season) {
@@ -45,6 +68,15 @@ function addListItems(season, list, seasonClass) {
     }
 }
 
+function addAnySeason () {
+    activityAnySeason.forEach((item) => {
+        let div = document.createElement('div');
+        div.innerHTML = item;
+        div.classList = "listItems " +  "allSeasons";
+        document.getElementById('newItems').appendChild(div);  
+    });
+}
+        
 selection.addEventListener('change', (event) => {
     document.getElementById('newItems').innerHTML = '';
     changeHeader();
@@ -52,6 +84,6 @@ selection.addEventListener('change', (event) => {
     addListItems('winter', winterList, 'winterClass');
     addListItems('spring', springList, 'springClass');
     addListItems('summer', summerList, 'summerClass');
-    addListItems('fall', fallList, 'fallClass');
+    addListItems('fall', fallList, 'fallClass'); 
+    addAnySeason();
 });
-
