@@ -12,5 +12,6 @@ This is an app to make customizable, printable lists for all seasons. Included a
 
 IN PROGRESS.
 
-Requirement Features:
+Requirement Features Used:
 * Create an array, dictionary or list, populate it with multiple values, retrieve at least one value, and use or display it in your application.
+* Calculate and display data based on an external factor (ex: get the current date, and display how many days remaining until some event)

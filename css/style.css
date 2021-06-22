@@ -7,14 +7,15 @@
 }
 
 main {
-    margin-top: 30px;
+    width: 90%;
+    margin: 30px auto;
 }
 
 /*----------------------------------------*/
 /*              FORMS                     */
 /*----------------------------------------*/
 form {
-    width: 50%;
+    width: 80%;
     margin: 10px;
     padding: 10px;
     background-color: lightgray;
@@ -31,6 +32,7 @@ form {
 
 #userList {
     display: flex;
+    flex-wrap: wrap;
 }
 
 .bucketList {
@@ -53,8 +55,8 @@ span {
 /*      Auto-Generated Activities         */
 /*----------------------------------------*/
 .listItems {
-    width: 25%;
-    margin: 10px;
+    width: 75%;
+    margin: 10px auto;
     padding: 10px;
     border-radius: 10px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -119,4 +121,14 @@ span {
 
 .allSeasons:hover {
     background-color: rgb(192, 247, 192); 
+}
+
+
+@media only print {
+    body {
+        visibility: hidden;
+    }
+    #listArea {
+        visibility: visible;
+    }
 }

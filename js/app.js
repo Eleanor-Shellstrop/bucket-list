@@ -24,7 +24,7 @@ function xmasCountdown() {
     return daysLeft + " Days Until Christmas!";
 }
 
-function changeHeader () {
+function changeHeader() {
     const header = document.getElementById('header');
     if (selection.value === 'xmas') {
         header.innerHTML = "Christmas Bucket List";
@@ -65,14 +65,12 @@ titleForm.addEventListener('submit', (e) => {
 const activityForm = document.getElementById('addActivity');
 const activityInput = activityForm.querySelector('input');
 
-activityForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-
+function createListItem(textSource) {
     const listDiv = document.createElement('div');
     listDiv.classList = "bucketList";
 
     const span = document.createElement('span');
-    span.innerText = activityInput.value;
+    span.innerText = textSource;
     listDiv.appendChild(span);
 
     const label = document.createElement('label');
@@ -84,9 +82,15 @@ activityForm.addEventListener('submit', (e) => {
     document.getElementById('userList').appendChild(listDiv);
     listDiv.appendChild(label);
     label.appendChild(check);
+}
 
+activityForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    createListItem(activityInput.value);   
     activityInput.value = '';
-})
+});
+
+
 
 //-------------------------------------------------------------------
 //      SELECT A SEASON DROPDOWN
@@ -105,7 +109,7 @@ function addListItems(season, list, seasonClass) {
     }
 }
 
-function addAnySeason () {
+function addAnySeason() {
     activityAnySeason.forEach((item) => {
         let div = document.createElement('div');
         div.innerHTML = item;
@@ -114,7 +118,7 @@ function addAnySeason () {
     });
 }
         
-selection.addEventListener('change', (event) => {
+selection.addEventListener('change', (e) => {
     document.getElementById('newItems').innerHTML = '';
     changeHeader();
     addListItems('xmas', xmasList, 'xmasClass');
@@ -123,4 +127,13 @@ selection.addEventListener('change', (event) => {
     addListItems('summer', summerList, 'summerClass');
     addListItems('fall', fallList, 'fallClass'); 
     addAnySeason();
+    const listItem = document.getElementsByClassName('listItems');
+
+for (let i = 0; i < listItem.length; i++) {
+    listItem[i].addEventListener('click', ()=> {
+        createListItem(listItem[i].innerHTML);
+    })
+}
 });
+
+
