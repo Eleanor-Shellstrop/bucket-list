@@ -79,15 +79,23 @@ function createListItem(textSource) {
     const check = document.createElement('input');
     check.type = "checkbox";
 
+    const editButton = document.createElement('button');
+    editButton.innerText = "Edit";
+
+    const removeButton = document.createElement('button');
+    removeButton.innerText = "Remove";
+
     document.getElementById('userList').appendChild(listDiv);
     listDiv.appendChild(label);
     label.appendChild(check);
+    listDiv.appendChild(editButton);
+    listDiv.appendChild(removeButton);
 }
 
-activityForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-    createListItem(activityInput.value);   
-    activityInput.value = '';
+    activityForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        createListItem(activityInput.value);   
+        activityInput.value = '';
 });
 
 
@@ -127,13 +135,45 @@ selection.addEventListener('change', (e) => {
     addListItems('summer', summerList, 'summerClass');
     addListItems('fall', fallList, 'fallClass'); 
     addAnySeason();
+    
     const listItem = document.getElementsByClassName('listItems');
 
-for (let i = 0; i < listItem.length; i++) {
-    listItem[i].addEventListener('click', ()=> {
-        createListItem(listItem[i].innerHTML);
-    })
-}
+    // Allows user to click and add to list
+    for (let i = 0; i < listItem.length; i++) {
+        listItem[i].addEventListener('click', ()=> {
+            createListItem(listItem[i].innerHTML);
+        });
+    }
 });
 
+//-------------------------------------------------------------------
+//      EDIT AND REMOVE BUTTONS
+//-------------------------------------------------------------------
+const userList = document.getElementById('userList');
 
+userList.addEventListener('click', (e) => {
+    if (e.target.tagName === 'BUTTON') {
+        const button = e.target;
+        const li = button.parentNode;
+        const userList = li.parentNode;
+        
+        if (button.textContent === 'Remove') {
+            userList.removeChild(li);  
+        } else if (button.textContent === 'Edit') {
+            const span = li.firstElementChild;
+            const input = document.createElement('input');
+            input.type = 'text';
+            input.value = span.textContent;
+            li.insertBefore(input, span);
+            li.removeChild(span);
+            button.textContent = 'save';
+        } else if (button.textContent === 'save') {
+            const input = li.firstElementChild;
+            const span = document.createElement('span');
+            span.textContent = input.value;
+            li.insertBefore(span, input);
+            li.removeChild(input);
+            button.textContent = 'Edit';
+        }
+    }
+});
