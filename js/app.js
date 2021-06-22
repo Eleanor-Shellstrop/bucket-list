@@ -12,18 +12,32 @@ import { activityAnySeason } from "./anytime.js";
 //-------------------------------------------------------------------
 //      CHANGE THE H1 WITH SELECTION INPUT
 //-------------------------------------------------------------------
+
+//  If Christmas, add countdown clock
+function xmasCountdown() {
+    const today = new Date();
+    const daysUntilXMas = new Date(2021, 11, 25, 23, 0, 0, 0); // Set day and month
+    daysUntilXMas.setFullYear(today.getFullYear()); // Set year to this year
+    const msPerDay = 24 * 60 * 60 * 1000; // Number of milliseconds per day
+    let daysLeft = (daysUntilXMas.getTime() - today.getTime()) / msPerDay;
+    daysLeft = Math.round(daysLeft); //returns days left in the year
+    return daysLeft + " Days Until Christmas!";
+}
+
 function changeHeader () {
     const header = document.getElementById('header');
     if (selection.value === 'xmas') {
-        header.innerHTML = "Christmas Bucket List"
+        header.innerHTML = "Christmas Bucket List";
+        const ifXmas = document.getElementById('ifXmas');
+        ifXmas.innerHTML = xmasCountdown();
     } else if (selection.value === 'winter') {
-        header.innerHTML = "Winter Bucket List"
+        header.innerHTML = "Winter Bucket List";
     } else if (selection.value === 'spring') {
-        header.innerHTML = "Spring Bucket List"
+        header.innerHTML = "Spring Bucket List";
     } else if (selection.value === 'summer') {
-        header.innerHTML = "Summer Bucket List"
+        header.innerHTML = "Summer Bucket List";
     } else if (selection.value === 'fall') {
-        header.innerHTML = "Fall Bucket List"
+        header.innerHTML = "Fall Bucket List";
     } else {
         return; 
     }
@@ -53,18 +67,24 @@ const activityInput = activityForm.querySelector('input');
 
 activityForm.addEventListener('submit', (e) => {
     e.preventDefault();
+
     const listDiv = document.createElement('div');
     listDiv.classList = "bucketList";
+
     const span = document.createElement('span');
     span.innerText = activityInput.value;
     listDiv.appendChild(span);
+
     const label = document.createElement('label');
     label.innerText = "Completed";
+
     const check = document.createElement('input');
     check.type = "checkbox";
+
     document.getElementById('userList').appendChild(listDiv);
     listDiv.appendChild(label);
     label.appendChild(check);
+
     activityInput.value = '';
 })
 
