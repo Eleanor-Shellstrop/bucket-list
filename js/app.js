@@ -25,19 +25,29 @@ function xmasCountdown() {
 }
 
 function changeHeader() {
+    const h1 = document.getElementById('h1');
     const header = document.getElementById('header');
     if (selection.value === 'xmas') {
-        header.innerHTML = "Christmas Bucket List";
+        h1.innerHTML = "Christmas Bucket List";
         const ifXmas = document.getElementById('ifXmas');
         ifXmas.innerHTML = xmasCountdown();
+        header.style.backgroundImage = "url('../images/xmas.png')";
     } else if (selection.value === 'winter') {
-        header.innerHTML = "Winter Bucket List";
+        h1.innerHTML = "Winter Bucket List";
+        header.style.backgroundImage = "url('../images/winter.png')";
+        ifXmas.innerHTML = '';
     } else if (selection.value === 'spring') {
-        header.innerHTML = "Spring Bucket List";
+        h1.innerHTML = "Spring Bucket List";
+        header.style.backgroundImage = "url('../images/spring.png')";
+        ifXmas.innerHTML = '';
     } else if (selection.value === 'summer') {
-        header.innerHTML = "Summer Bucket List";
+        h1.innerHTML = "Summer Bucket List";
+        header.style.backgroundImage = "url('../images/summer.png')";
+        ifXmas.innerHTML = '';
     } else if (selection.value === 'fall') {
-        header.innerHTML = "Fall Bucket List";
+        h1.innerHTML = "Fall Bucket List";
+        header.style.backgroundImage = "url('../images/fall.png')";
+        ifXmas.innerHTML = '';
     } else {
         return; 
     }

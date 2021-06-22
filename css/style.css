@@ -12,6 +12,34 @@ main {
 }
 
 /*----------------------------------------*/
+/*              HEADER                    */
+/*----------------------------------------*/
+
+header {
+    width: 95%;
+    min-height: 200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url('../images/winter.png');
+    background-position: center;
+    background-size: cover;
+}
+
+header h1 {
+    padding: 10px;
+    color: white;
+    text-shadow: -1px -1px 1px dimgray, 2px 2px 2px black;
+}
+
+#ifXmas {
+    background-color: #ffffffe8;
+    padding: 2%;
+}
+
+/*----------------------------------------*/
 /*              FORMS                     */
 /*----------------------------------------*/
 form {
@@ -46,8 +74,7 @@ form {
 }
 
 span {
-    font-size: 1.25em;
-    margin-bottom: 20%;
+    margin-bottom: 10%;
     font-weight: bold;
 }
 

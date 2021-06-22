@@ -8,9 +8,12 @@
     <link href="./css/style.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-    <header>
-        <h1 id="header">Season Bucket List</h1>
+    <header id="header">
+        <h1 id="h1">Season Bucket List</h1>
         <div id="ifXmas"></div>
+        
+    </header>
+    <main>
         <form id="addTitle">
             <input type="text" name="title" placeholder="Name Your List">
             <button type="submit" name="title-submit" value="submit">Name</button>
@@ -19,8 +22,6 @@
             <input type="text" name="activity" placeholder="What Do You Want to Do?">
             <button type="submit" name="activity-submit" value="submit">Add</button>
         </form>
-    </header>
-    <main>
         <label for="seasonSelect">Select a Season</label>
         <select id="seasonSelect">
             <option value="">--Please choose an option--</option>
