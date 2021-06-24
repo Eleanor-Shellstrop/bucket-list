@@ -12,7 +12,7 @@ import { activityAnySeason } from "./anytime.js";
 //-------------------------------------------------------------------
 //      CHANGE THE H1 WITH SELECTION INPUT
 //-------------------------------------------------------------------
-
+    const ifXmas = document.getElementById('ifXmas');
 //  If Christmas, add countdown clock
 function xmasCountdown() {
     const today = new Date();
@@ -27,27 +27,24 @@ function xmasCountdown() {
 function changeHeader() {
     const h1 = document.getElementById('h1');
     const header = document.getElementById('header');
+
+
     if (selection.value === 'xmas') {
-        h1.innerHTML = "Christmas Bucket List";
-        const ifXmas = document.getElementById('ifXmas');
+        h1.innerHTML = "Christmas";
         ifXmas.innerHTML = xmasCountdown();
         header.style.backgroundImage = "url('../images/xmas.png')";
     } else if (selection.value === 'winter') {
-        h1.innerHTML = "Winter Bucket List";
+        h1.innerHTML = "Winter";
         header.style.backgroundImage = "url('../images/winter.png')";
-        ifXmas.innerHTML = '';
     } else if (selection.value === 'spring') {
-        h1.innerHTML = "Spring Bucket List";
+        h1.innerHTML = "Spring";
         header.style.backgroundImage = "url('../images/spring.png')";
-        ifXmas.innerHTML = '';
     } else if (selection.value === 'summer') {
-        h1.innerHTML = "Summer Bucket List";
+        h1.innerHTML = "Summer";
         header.style.backgroundImage = "url('../images/summer.png')";
-        ifXmas.innerHTML = '';
     } else if (selection.value === 'fall') {
-        h1.innerHTML = "Fall Bucket List";
+        h1.innerHTML = "Fall";
         header.style.backgroundImage = "url('../images/fall.png')";
-        ifXmas.innerHTML = '';
     } else {
         return; 
     }
@@ -125,6 +122,7 @@ function addListItems(season, list, seasonClass) {
             document.getElementById('newItems').appendChild(div);
         });
     }
+    
 }
 
 function addAnySeason() {
@@ -145,7 +143,14 @@ selection.addEventListener('change', (e) => {
     addListItems('summer', summerList, 'summerClass');
     addListItems('fall', fallList, 'fallClass'); 
     addAnySeason();
-    
+    if (document.getElementById('seasonSelect').value === 'xmas') {
+        ifXmas.display = 'block';
+        ifXmas.style.backgroundColor = '#ffffffe8';
+    } else {
+        ifXmas.display = 'none';
+        ifXmas.innerHTML = '';
+        ifXmas.style.backgroundColor = 'transparent';
+    }
     const listItem = document.getElementsByClassName('listItems');
 
     // Allows user to click and add to list

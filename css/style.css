@@ -29,13 +29,15 @@ header {
 }
 
 header h1 {
-    padding: 10px;
+    margin: 0 auto;
+    padding: 5px;
+    font-family: 'Cookie', cursive;
+    font-size: 4em;
     color: white;
     text-shadow: -1px -1px 1px dimgray, 2px 2px 2px black;
 }
 
 #ifXmas {
-    background-color: #ffffffe8;
     padding: 2%;
 }
 
