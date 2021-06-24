@@ -12,7 +12,8 @@ import { activityAnySeason } from "./anytime.js";
 //-------------------------------------------------------------------
 //      CHANGE THE H1 WITH SELECTION INPUT
 //-------------------------------------------------------------------
-    const ifXmas = document.getElementById('ifXmas');
+const ifXmas = document.getElementById('ifXmas');
+
 //  If Christmas, add countdown clock
 function xmasCountdown() {
     const today = new Date();
@@ -27,8 +28,6 @@ function xmasCountdown() {
 function changeHeader() {
     const h1 = document.getElementById('h1');
     const header = document.getElementById('header');
-
-
     if (selection.value === 'xmas') {
         h1.innerHTML = "Christmas";
         ifXmas.innerHTML = xmasCountdown();
@@ -66,6 +65,58 @@ titleForm.addEventListener('submit', (e) => {
 });
 
 //-------------------------------------------------------------------
+//      CHANGE BUCKET LIST STYLES
+//-------------------------------------------------------------------
+
+function changeListStyle(season) {
+    document.querySelectorAll('.bucketList').forEach(elem => {
+        elem.classList.add(season);
+    }) 
+}
+
+function removeClass(season) {
+    document.querySelectorAll('.bucketList').forEach(elem => {
+        elem.classList.remove(season);
+    }) 
+}
+
+function applyClassToBucketList() {
+    if (selection.value === 'xmas') {
+        changeListStyle('xmas');
+        removeClass('winter');
+        removeClass('spring');
+        removeClass('summer');
+        removeClass('fall');
+    } else if (selection.value === 'winter') {
+        changeListStyle('winter');
+        removeClass('xmas');
+        removeClass('spring');
+        removeClass('summer');
+        removeClass('fall');
+    } else if (selection.value === 'spring') {
+        changeListStyle('spring');
+        removeClass('xmas');
+        removeClass('winter');
+        removeClass('summer');
+        removeClass('fall');
+    } else if (selection.value === 'summer') {
+        changeListStyle('summer');
+        removeClass('xmas');
+        removeClass('winter');
+        removeClass('spring');
+        removeClass('fall');
+    } else if (selection.value === 'fall') {
+        changeListStyle('fall');
+        removeClass('xmas');
+        removeClass('winter');
+        removeClass('spring');
+        removeClass('summer');
+    } else {
+        return; 
+    }
+}
+
+//-------------------------------------------------------------------
 //      ADD A BUCKET LIST ITEM
 //-------------------------------------------------------------------
 
@@ -97,6 +148,7 @@ function createListItem(textSource) {
     label.appendChild(check);
     listDiv.appendChild(editButton);
     listDiv.appendChild(removeButton);
+    applyClassToBucketList();
 }
 
     activityForm.addEventListener('submit', (e) => {
@@ -159,6 +211,7 @@ selection.addEventListener('change', (e) => {
             createListItem(listItem[i].innerHTML);
         });
     }
+    applyClassToBucketList();
 });
 
 //-------------------------------------------------------------------

@@ -33,7 +33,7 @@ header h1 {
     padding: 5px;
     font-family: 'Cookie', cursive;
     font-size: 4em;
-    color: white;
+    color: floralwhite;
     text-shadow: -1px -1px 1px dimgray, 2px 2px 2px black;
 }
 
@@ -66,7 +66,7 @@ form {
 }
 
 .bucketList {
-    min-width: 100px;
+    min-width: 200px;
     min-height: 100px;
     display: flex;
     flex-direction: column;
@@ -78,6 +78,10 @@ form {
 span {
     margin-bottom: 10%;
     font-weight: bold;
+}
+
+.fall {
+    background-color: sandybrown;
 }
 
 /*----------------------------------------*/
