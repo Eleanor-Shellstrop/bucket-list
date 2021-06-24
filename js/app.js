@@ -74,43 +74,32 @@ function changeListStyle(season) {
     }) 
 }
 
-function removeClass(season) {
+function removeClass(season1, season2, season3, season4) {
     document.querySelectorAll('.bucketList').forEach(elem => {
-        elem.classList.remove(season);
+        elem.classList.remove(season1);
+        elem.classList.remove(season2);
+        elem.classList.remove(season3);
+        elem.classList.remove(season4);
     }) 
 }
 
 function applyClassToBucketList() {
     if (selection.value === 'xmas') {
         changeListStyle('xmas');
-        removeClass('winter');
-        removeClass('spring');
-        removeClass('summer');
-        removeClass('fall');
+        removeClass('winter', 'spring', 'summer', 'fall');
     } else if (selection.value === 'winter') {
         changeListStyle('winter');
-        removeClass('xmas');
-        removeClass('spring');
-        removeClass('summer');
-        removeClass('fall');
+        removeClass('xmas', 'spring', 'summer', 'fall');
     } else if (selection.value === 'spring') {
         changeListStyle('spring');
-        removeClass('xmas');
-        removeClass('winter');
-        removeClass('summer');
-        removeClass('fall');
+        removeClass('xmas', 'winter', 'summer', 'fall');
     } else if (selection.value === 'summer') {
         changeListStyle('summer');
-        removeClass('xmas');
-        removeClass('winter');
-        removeClass('spring');
-        removeClass('fall');
+        removeClass('xmas', 'winter', 'spring', 'fall');
     } else if (selection.value === 'fall') {
         changeListStyle('fall');
-        removeClass('xmas');
-        removeClass('winter');
-        removeClass('spring');
-        removeClass('summer');
+        changeListStyle('summer');
+        removeClass('xmas', 'winter', 'spring', 'summer');
     } else {
         return; 
     }
