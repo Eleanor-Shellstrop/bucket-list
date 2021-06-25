@@ -68,7 +68,7 @@ titleForm.addEventListener('submit', (e) => {
 //      CHANGE BUCKET LIST STYLES
 //-------------------------------------------------------------------
 
-function changeListStyle(season) {
+function addClass(season) {
     document.querySelectorAll('.bucketList').forEach(elem => {
         elem.classList.add(season);
     }) 
@@ -85,20 +85,20 @@ function removeClass(season1, season2, season3, season4) {
 
 function applyClassToBucketList() {
     if (selection.value === 'xmas') {
-        changeListStyle('xmas');
+        addClass('xmas');
         removeClass('winter', 'spring', 'summer', 'fall');
     } else if (selection.value === 'winter') {
-        changeListStyle('winter');
+        addClass('winter');
         removeClass('xmas', 'spring', 'summer', 'fall');
     } else if (selection.value === 'spring') {
-        changeListStyle('spring');
+        addClass('spring');
         removeClass('xmas', 'winter', 'summer', 'fall');
     } else if (selection.value === 'summer') {
-        changeListStyle('summer');
+        addClass('summer');
         removeClass('xmas', 'winter', 'spring', 'fall');
     } else if (selection.value === 'fall') {
-        changeListStyle('fall');
-        changeListStyle('summer');
+        addClass('fall');
+        addClass('summer');
         removeClass('xmas', 'winter', 'spring', 'summer');
     } else {
         return; 
@@ -127,9 +127,11 @@ function createListItem(textSource) {
     check.type = "checkbox";
 
     const editButton = document.createElement('button');
+    editButton.classList = "editButton";
     editButton.innerText = "Edit";
 
     const removeButton = document.createElement('button');
+    removeButton.classList = "removeButton"
     removeButton.innerText = "Remove";
 
     document.getElementById('userList').appendChild(listDiv);
