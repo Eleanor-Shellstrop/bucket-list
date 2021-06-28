@@ -140,6 +140,9 @@ span {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+.listItems:hover {
+    cursor: default;
+}
 
 /* Winter- XMas */
 .xmasClass {
