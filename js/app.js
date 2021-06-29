@@ -145,10 +145,10 @@ function createListItem(textSource) {
     applyClassToBucketList();
 }
 
-    activityForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-        createListItem(activityInput.value);   
-        activityInput.value = '';
+activityForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    createListItem(activityInput.value);   
+    activityInput.value = '';
 });
 
 
@@ -239,3 +239,54 @@ userList.addEventListener('click', (e) => {
         }
     }
 });
+
+
+//-------------------------------------------------------------------
+//      API
+//-------------------------------------------------------------------
+
+const randomActivity = document.getElementById('randomActivity');
+const randomButton = document.getElementById('randomButton');
+
+function requestListener() {
+    const data = JSON.parse(this.responseText);
+    console.log(data);
+}
+
+function requestError(error) {
+    console.log('Fetch Error :-S', error);
+}
+
+const activityRequest = new XMLHttpRequest();
+activityRequest.onload = requestListener;
+activityRequest.onerror = requestError;
+activityRequest.open('GET', 'https://www.boredapi.com/api/activity?type=recreational', true);
+activityRequest.send();
+
+randomButton.addEventListener('click', ()=> {
+    fetch('https://www.boredapi.com/api/activity?type=recreational')
+    .then(
+        function(response) {
+        if (response.status !== 200) {
+            console.log('Looks like there was a problem. Status Code: ' +
+            response.status);
+            return;
+        }
+
+        // Examine the text in the response
+        response.json().then(function(data) {
+            console.log(data.file);
+            randomActivity.innerHTML = data.activity;
+        });
+        }
+    )
+    .catch(function(error) {
+        console.log('Fetch Error :-S', error);
+    });
+}) 
+
+const randomAddToListButton = document.getElementById('randomAddToListButton');
+
+randomAddToListButton.addEventListener('click', () => {
+    createListItem(randomActivity.textContent); 
+})
