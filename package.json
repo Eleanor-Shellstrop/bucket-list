@@ -6,6 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "type": "module",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Eleanor-Shellstrop/bucket-list.git"
@@ -17,3 +18,5 @@
   },
   "homepage": "https://github.com/Eleanor-Shellstrop/bucket-list#readme"
 }
+
+
