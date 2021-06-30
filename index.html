@@ -12,13 +12,13 @@
     <link href="./css/style.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-    <header id="header">
+    <header id="header" class="container">
         <h1 id="h1">Seasonal</h1>
         <h1>Bucket List</h1>
         <div id="ifXmas" display="none"></div>
         
     </header>
-    <main> 
+    <main class="container"> 
         <!--   Accordion Menu Section   -->
         <div class="accordion accordion-flush" id="accordionExample">
             <!--   Choose a Season   -->
@@ -32,7 +32,7 @@
                 <div class="accordion-body">
                     <div id="select">
                         <label for="seasonSelect" id="selectLabel">Select a Season</label>
-                        <select id="seasonSelect">
+                        <select id="seasonSelect" class="form-select">
                             <option value="">--Please choose an option--</option>
                             <option value="xmas">Christmas</option>
                             <option value="winter">Winter (secular)</option>
@@ -98,7 +98,7 @@
                 <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
                   <div class="accordion-body">
                     <div id="randomize">
-                        <label for="random-submit">Find a random activity</label>
+                        <label for="random-submit">Click for a random activity</label>
                         <button id="randomButton" name="random-submit" value="submit">Search</button>
                         <div id="randomGenerate">
                             <div id="randomActivity"></div>
@@ -113,12 +113,13 @@
         </div>
           <!--   /Accordion Menu Section   -->
         
-        <div id="listArea">
+        <div class="container" id="listArea">
             <h2 id="listHeader">My Bucket List</h2>
             <div id="userList"></div> 
         </div>
-        <h4>Click To Add to Your List</h4>
-        <div id="newItems"></div>
+        <h4>Activity Suggestions</h4>
+        <p>Select a season to generate ideas</p>
+        <div class="container" id="newItems"></div>
          
         
     </main>

@@ -1,8 +1,3 @@
-/**
- * TODO: Fix Remove issue
- */
-
-
 //-------------------------------------------------------------------
 //      IMPORTS
 //-------------------------------------------------------------------
@@ -229,7 +224,7 @@ const userList = document.getElementById('userList');
 userList.addEventListener('click', (e) => {
     if (e.target.tagName === 'BUTTON') {
         const button = e.target;
-        const li = button.parentNode;
+        const li = button.parentNode.parentNode;
         const userList = li.parentNode;
         
         if (button.textContent === 'Remove') {

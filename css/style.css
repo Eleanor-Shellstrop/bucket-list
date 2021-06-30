@@ -4,6 +4,7 @@
 
 * {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: rgb(59, 59, 59);
 }
 
 main {
@@ -12,8 +13,14 @@ main {
     justify-content: center;
 }
 
+h2 {
+    color: #3E3347;
+}
+
 h4 {
-    font-size: 1em;
+    font-size: 1.2em;
+    padding-top: 20px;
+    border-top: 2px solid #3E3347;
 }
 
 /*----------------------------------------*/
@@ -52,7 +59,6 @@ header h1 {
 form,
 #select,
 #randomize {
-    width: 90%;
     margin: 10px auto;  
     padding: 10px;
     display: flex;
@@ -70,13 +76,22 @@ input {
     border: 1px solid darkslategray;
 }
 
+.accordion-button:not(.collapsed) {
+    background-color: #7F9F9A;
+    color: #F9F9F0;
+}
+
 #selectLabel {
     margin-bottom: 10px;
 }
 
 #select {
-    background-color: #AB8787;
+    background-color: #C6D5CA;
     color: whitesmoke;
+}
+
+#addTitle {
+    background-color: #B1CEB9;
 }
 
 #addActivity {
@@ -84,7 +99,11 @@ input {
 }
 
 #randomize {
-    background-color: #B1CEB9;
+    background-color: #9AA0A9;
+}
+
+#randomize label {
+    color: whitesmoke;
 }
 
 #randomGenerate {
@@ -92,10 +111,12 @@ input {
 }
 
 #randomActivity {
+    min-width: 70%;
     min-height: 15px;
     margin: 10px;
     padding: 5px;
     background-color: white;
+    color: #3E3347;
     border: 1px solid gray;
 }
 
@@ -135,6 +156,7 @@ button {
 /*----------------------------------------*/
 #listArea {
     width: 90%;
+    min-height: 200px;
     margin: 10px auto;
     padding: 20px;
     justify-content: center;
