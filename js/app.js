@@ -121,11 +121,17 @@ function createListItem(textSource) {
     span.innerText = textSource;
     listDiv.appendChild(span);
 
-    const label = document.createElement('label');
-    label.innerText = "Completed";
+    const checkDiv = document.createElement('div');
+    checkDiv.classList = "completedCheckboxDiv";
 
-    const check = document.createElement('input');
-    check.type = "checkbox";
+    const completedLabel = document.createElement('label');
+    completedLabel.innerText = "Completed";
+
+    const checkbox = document.createElement('input');
+    checkbox.type = "checkbox";
+
+    const buttonDiv = document.createElement('div');
+    buttonDiv.classList = "listButtons";
 
     const editButton = document.createElement('button');
     editButton.classList = "editButton";
@@ -136,10 +142,14 @@ function createListItem(textSource) {
     removeButton.innerText = "Remove";
 
     document.getElementById('userList').appendChild(listDiv);
-    listDiv.appendChild(label);
-    label.appendChild(check);
-    listDiv.appendChild(editButton);
-    listDiv.appendChild(removeButton);
+    
+    listDiv.appendChild(checkDiv);
+        checkDiv.appendChild(completedLabel);
+        checkDiv.appendChild(checkbox);
+    
+    listDiv.appendChild(buttonDiv);
+        buttonDiv.appendChild(editButton);
+        buttonDiv.appendChild(removeButton);
     applyClassToBucketList();
 }
 
@@ -226,8 +236,8 @@ userList.addEventListener('click', (e) => {
             input.value = span.textContent;
             li.insertBefore(input, span);
             li.removeChild(span);
-            button.textContent = 'save';
-        } else if (button.textContent === 'save') {
+            button.textContent = 'Save';
+        } else if (button.textContent === 'Save') {
             const input = li.firstElementChild;
             const span = document.createElement('span');
             span.textContent = input.value;
@@ -240,7 +250,7 @@ userList.addEventListener('click', (e) => {
 
 
 //-------------------------------------------------------------------
-//      API
+//      API: RANDOM BUTTON
 //-------------------------------------------------------------------
 
 const randomActivity = document.getElementById('randomActivity');

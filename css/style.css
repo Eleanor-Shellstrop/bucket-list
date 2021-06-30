@@ -108,11 +108,13 @@ button {
 }
 
 .editButton {
-    margin: 5px 0 0 0;
+    width: 50px;
+    margin: 5px 5px 0 0;
     background-color: lightcyan;
 }
 
 .removeButton { 
+    width: 75px;
     background-color: mistyrose;
 }
 
@@ -148,6 +150,11 @@ span {
     padding: 20px 10px;
     font-weight: bold;
     background-color: lightyellow;
+}
+
+input[type=checkbox] {
+    width: auto;
+    margin-left: 10px;
 }
 
 .xmas {
@@ -242,6 +249,10 @@ span {
     background-color: rgb(192, 247, 192); 
 }
 
+
+/*----------------------------------------*/
+/*      Media Queries                     */
+/*----------------------------------------*/
 
 @media only print {
     body {
