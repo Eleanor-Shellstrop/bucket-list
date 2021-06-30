@@ -8,7 +8,7 @@
 
 main {
     width: 90%;
-    margin: 30px auto;
+    margin: 10px auto;
     justify-content: center;
 }
 
@@ -45,31 +45,49 @@ header h1 {
 /*----------------------------------------*/
 /*              FORMS                     */
 /*----------------------------------------*/
-form {
-    width: 80%;
-    margin: 10px;
+form,
+#select,
+#randomize {
+    width: 90%;
+    margin: 10px auto;  
     padding: 10px;
-    background-color: lightgray;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+form {
+  background-color: #dadcdb;  
+}
+
+input {
+    width: 80%;
+    margin: 10px auto;
+    border: 1px solid darkslategray;
+}
+
+#selectLabel {
+    margin-bottom: 10px;
 }
 
 #select {
-    width: 80%;
-    margin: 0 auto;
+    background-color: #AB8787;
+    color: whitesmoke;
+}
+
+#addActivity {
+    background-color: #ADC1BE;
 }
 
 #randomize {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-top: 20px;
-    padding: 5px;
-    background-color: lightcyan;
+    background-color: #B1CEB9;
 }
 
 
 #randomActivity {
     width: 70%;
+    min-height: 15px;
     margin: 10px;
     padding: 5px;
     background-color: white;
@@ -82,8 +100,11 @@ form {
 button {
     width: 100px;
     margin: 5px 0px;
+    padding: 5px;
     border-radius: 5px;
-    background-color: lightyellow;
+    background-color: #F9F9F0;
+    border: 1px solid #9684A6;
+    box-shadow: 0 1px 2px #3E3347;
 }
 
 .editButton {
@@ -100,10 +121,11 @@ button {
 /*              LIST AREA                 */
 /*----------------------------------------*/
 #listArea {
-    margin: 10px;
+    width: 90%;
+    margin: 10px auto;
     padding: 20px;
     justify-content: center;
-    background-color: lightgray;
+    background-color: #F9F9F0;
 }
 
 #userList {
@@ -112,7 +134,7 @@ button {
 }
 
 .bucketList {
-    min-width: 200px;
+    min-width: 100px;
     min-height: 100px;
     display: flex;
     flex-direction: column;

@@ -17,17 +17,9 @@
         <div id="ifXmas" display="none"></div>
         
     </header>
-    <main>
-        <form id="addTitle">
-            <input type="text" name="title" placeholder="Name Your List">
-            <button type="submit" name="title-submit" value="submit">Name</button>
-        </form>
-        <form id="addActivity">
-            <input type="text" name="activity" placeholder="What Do You Want to Do?">
-            <button type="submit" name="activity-submit" value="submit">Add</button>
-        </form>
+    <main> 
         <div id="select">
-            <label for="seasonSelect">Select a Season</label>
+            <label for="seasonSelect" id="selectLabel">Select a Season</label>
             <select id="seasonSelect">
                 <option value="">--Please choose an option--</option>
                 <option value="xmas">Christmas</option>
@@ -37,9 +29,19 @@
                 <option value="fall">Fall</option>
             </select>
         </div>
+        <form id="addTitle">
+            <label for="title-submit">Change Your List Title</label>
+            <input type="text" name="title" placeholder="'My Family's Bucket List'">
+            <button type="submit" name="title-submit" value="submit">Update Title</button>
+        </form>
+        <form id="addActivity">
+            <label for="activity-submit">What Do You Want to Do?</label>
+            <input type="text" name="activity" placeholder="'Take a scenic drive'">
+            <button type="submit" name="activity-submit" value="submit">Add to List</button>
+        </form>
         <div id="randomize">
             <label for="random-submit">Find a random activity</label>
-            <button id="randomButton" name="random-submit" value="submit">Find</button>
+            <button id="randomButton" name="random-submit" value="submit">Search</button>
             <div id="randomActivity"></div>
             <button id="randomAddToListButton">Add to List</button> 
         </div>
