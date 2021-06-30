@@ -12,6 +12,10 @@ main {
     justify-content: center;
 }
 
+h4 {
+    font-size: 1em;
+}
+
 /*----------------------------------------*/
 /*              HEADER                    */
 /*----------------------------------------*/
@@ -62,7 +66,6 @@ form {
 }
 
 input {
-    width: 80%;
     margin: 10px auto;
     border: 1px solid darkslategray;
 }
@@ -84,9 +87,11 @@ input {
     background-color: #B1CEB9;
 }
 
+#randomGenerate {
+    display: contents;
+}
 
 #randomActivity {
-    width: 70%;
     min-height: 15px;
     margin: 10px;
     padding: 5px;
@@ -94,11 +99,12 @@ input {
     border: 1px solid gray;
 }
 
+
 /*----------------------------------------*/
 /*              BUTTONS                   */
 /*----------------------------------------*/
 button {
-    width: 100px;
+    min-width: 90px;
     margin: 5px 0px;
     padding: 5px;
     border-radius: 5px;
@@ -116,6 +122,11 @@ button {
 .removeButton { 
     width: 75px;
     background-color: mistyrose;
+}
+
+#randomButton,
+#randomAddToListButton {
+    margin: 0 auto;
 }
 
 
@@ -136,7 +147,7 @@ button {
 }
 
 .bucketList {
-    min-width: 100px;
+    width: 230px;
     min-height: 100px;
     display: flex;
     flex-direction: column;
