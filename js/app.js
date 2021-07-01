@@ -18,7 +18,7 @@ const ifXmas = document.getElementById('ifXmas');
 //  If Christmas, add countdown clock
 function xmasCountdown() {
     const today = new Date();
-    const daysUntilXMas = new Date(2021, 11, 25, 23, 0, 0, 0); // Set day and month
+    const daysUntilXMas = new Date(2021, 11, 25, 0, 0, 0, 0); // Set day and month
     daysUntilXMas.setFullYear(today.getFullYear()); // Set year to this year
     const msPerDay = 24 * 60 * 60 * 1000; // Number of milliseconds per day
     let daysLeft = (daysUntilXMas.getTime() - today.getTime()) / msPerDay;
@@ -166,6 +166,7 @@ activityForm.addEventListener('submit', (e) => {
 //-------------------------------------------------------------------
 
 const selection = document.getElementById('seasonSelect');
+const hint = document.getElementById('hint');
 
 function addListItems(season, list, seasonClass) {
     if (selection.value === season) {
@@ -190,6 +191,7 @@ function addAnySeason() {
         
 selection.addEventListener('change', (e) => {
     document.getElementById('newItems').innerHTML = '';
+    
     changeHeader();
     addListItems('xmas', xmasList, 'xmasClass');
     addListItems('winter', winterList, 'winterClass');
@@ -206,7 +208,6 @@ selection.addEventListener('change', (e) => {
         ifXmas.style.backgroundColor = 'transparent';
     }
     const listItem = document.getElementsByClassName('listItems');
-
     // Allows user to click and add to list
     for (let i = 0; i < listItem.length; i++) {
         listItem[i].addEventListener('click', ()=> {
@@ -214,6 +215,7 @@ selection.addEventListener('change', (e) => {
         });
     }
     applyClassToBucketList();
+    hint.innerHTML = '';
 });
 
 //-------------------------------------------------------------------

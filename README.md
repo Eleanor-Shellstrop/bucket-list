@@ -12,7 +12,7 @@ This is an app to make customizable, printable lists for all seasons. Included a
 
 IN PROGRESS.
 
-Project Requirements Met:
+### Project Requirements Met:
 - Retrieve data from an external API and display data in your app (such as with fetch() or with AJAX) 
   - Random activity generator with Bored API (https://www.boredapi.com)  
 - Create an array, dictionary or list, populate it with multiple values, retrieve at least one value, and use or display it in your application.

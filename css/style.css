@@ -45,7 +45,7 @@ header h1 {
     padding: 5px;
     font-family: 'Cookie', cursive;
     font-size: 4em;
-    color: floralwhite;
+    color: white;
     text-shadow: -1px -1px 1px dimgray, 2px 2px 2px black;
 }
 
@@ -125,13 +125,16 @@ input {
 /*              BUTTONS                   */
 /*----------------------------------------*/
 button {
-    min-width: 90px;
     margin: 5px 0px;
     padding: 5px;
     border-radius: 5px;
     background-color: #F9F9F0;
     border: 1px solid #9684A6;
     box-shadow: 0 1px 2px #3E3347;
+}
+
+.accordian button {
+    min-width: 90px;
 }
 
 .editButton {
@@ -142,7 +145,7 @@ button {
 
 .removeButton { 
     width: 75px;
-    background-color: mistyrose;
+    background-color: #DECECE;
 }
 
 #randomButton,
@@ -182,7 +185,7 @@ span {
     margin-bottom: 10%;
     padding: 20px 10px;
     font-weight: bold;
-    background-color: lightyellow;
+    background-color: #F9F9F0;
 }
 
 input[type=checkbox] {
@@ -191,23 +194,23 @@ input[type=checkbox] {
 }
 
 .xmas {
-    background-color: rgb(26, 133, 26);
+    background-color: #AB8787;
 }
 
 .winter {
-    background-color: powderblue;
+    background-color: #D3D4DE;
 }
 
 .spring {
-    background-color: plum;
+    background-color: #9B89A9;
 }
 
 .summer {
-    background-color: rgb(248, 248, 153);
+    background-color: #EAEEBF;
 }
 
 .fall {
-    background-color: sandybrown;
+    background-color: #DCAD84;
 }
 
 /*----------------------------------------*/
