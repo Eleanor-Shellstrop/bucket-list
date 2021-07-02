@@ -36,6 +36,8 @@ header {
     justify-content: center;
     align-items: center;
     background-image: url('../images/landing.png');
+    background-color: #607d8b;
+    background-blend-mode: screen;
     background-position: center;
     background-size: cover;
 }
@@ -44,9 +46,11 @@ header h1 {
     margin: 0 auto;
     padding: 5px;
     font-family: 'Cookie', cursive;
-    font-size: 4em;
+    font-size: 4.5em;
     color: white;
-    text-shadow: -1px -1px 1px dimgray, 2px 2px 2px black;
+    text-shadow:    -1px -1px 1px dimgray, 
+                    2px 2px 7px black, 
+                    1px 1px 1px black;
 }
 
 #ifXmas {
@@ -133,6 +137,10 @@ button {
     box-shadow: 0 1px 2px #3E3347;
 }
 
+button:active {
+    transform: translateY(2px);
+}
+
 .accordian button {
     min-width: 90px;
 }
@@ -166,7 +174,13 @@ button {
     background-color: #F9F9F0;
 }
 
+#listArea h2 {
+    font-family: 'Cookie', cursive;
+    font-size: 2em;
+}
+
 #userList {
+    min-height: 200px;
     display: flex;
     flex-wrap: wrap;
 }
@@ -296,5 +310,40 @@ input[type=checkbox] {
     }
     #listArea {
         visibility: visible;
+    }
+}
+
+/* Laptop and higher */
+@media (min-width: 1200px) {
+    header {
+        height: 20%;
+        margin-top: 20px;
+        grid-area: head;
+    }
+    .accordian {
+        margin: 10px 20px;
+        grid-area: acc;
+    }
+    main {
+        grid-area: main;
+    }
+    #newItems {
+        columns: 200px 2;
+        -webkit-column-break-inside: avoid;
+    }
+    body {
+        display: grid;
+        width: 80%;
+        min-height: 100%;
+        margin: 0 auto;
+        grid-template-areas: 
+                "head head head head"
+                "acc main main main"
+                "acc main main main";
+        gap: 20px;
+        grid-template-columns: 30% 10% 30% 30%;
+    }
+    .listItems {
+        display: inline-block;
     }
 }

@@ -26,6 +26,18 @@ function xmasCountdown() {
     return daysLeft + " Days Until Christmas!";
 }
 
+//  If screen is large
+const title = document.getElementById('title');
+const largeScreenTitle = document.getElementById('lg-title');
+
+function bigTitle(text) {
+    if (screen.width > 1200) {
+        title.style.display = 'none';
+        largeScreenTitle.innerHTML = text;
+    }
+}
+
+//  Change Header
 function changeHeader() {
     const h1 = document.getElementById('h1');
     const header = document.getElementById('header');
@@ -33,18 +45,23 @@ function changeHeader() {
         h1.innerHTML = "Christmas";
         ifXmas.innerHTML = xmasCountdown();
         header.style.backgroundImage = "url('../images/xmas.png')";
+        bigTitle("Christmas Bucket List");
     } else if (selection.value === 'winter') {
         h1.innerHTML = "Winter";
         header.style.backgroundImage = "url('../images/winter.png')";
+        bigTitle("Winter Bucket List");
     } else if (selection.value === 'spring') {
         h1.innerHTML = "Spring";
         header.style.backgroundImage = "url('../images/spring.png')";
+        bigTitle("Spring Bucket List");
     } else if (selection.value === 'summer') {
         h1.innerHTML = "Summer";
         header.style.backgroundImage = "url('../images/summer.png')";
+        bigTitle("Summer Bucket List");
     } else if (selection.value === 'fall') {
         h1.innerHTML = "Fall";
         header.style.backgroundImage = "url('../images/fall.png')";
+        bigTitle("Fall Bucket List");
     } else {
         return; 
     }
@@ -191,7 +208,6 @@ function addAnySeason() {
         
 selection.addEventListener('change', (e) => {
     document.getElementById('newItems').innerHTML = '';
-    
     changeHeader();
     addListItems('xmas', xmasList, 'xmasClass');
     addListItems('winter', winterList, 'winterClass');
@@ -300,3 +316,5 @@ const randomAddToListButton = document.getElementById('randomAddToListButton');
 randomAddToListButton.addEventListener('click', () => {
     createListItem(randomActivity.textContent); 
 })
+
+
