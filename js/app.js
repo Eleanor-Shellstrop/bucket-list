@@ -11,9 +11,47 @@ import { activityAnySeason } from "./anytime.js";
 
 
 //-------------------------------------------------------------------
+//      GLOBAL VARIABLES
+//-------------------------------------------------------------------
+
+//  If "Christmas" selected
+const ifXmas = document.getElementById('ifXmas');
+
+//  Title in header
+const h1 = document.getElementById('h1');
+const header = document.getElementById('header');
+const title = document.getElementById('title');
+const largeScreenTitle = document.getElementById('lg-title');
+
+//  Accordian option 1: Select a season
+const selection = document.getElementById('seasonSelect');
+
+//  Accordian option 2: Form to change title
+const titleForm = document.getElementById('addTitle');
+const titleInput = titleForm.querySelector('input');
+
+//  Accordian option 3: Form to add an activity
+const activityForm = document.getElementById('addActivity');
+const activityInput = activityForm.querySelector('input');
+
+//  Accordian option 4: API with random activity
+const randomActivity = document.getElementById('randomActivity');
+const randomButton = document.getElementById('randomButton');
+const randomAddToListButton = document.getElementById('randomAddToListButton');
+
+//  Bucket list header, default "My Bucket List"
+const listHeader = document.getElementById('listHeader');
+
+//  Bucket list area
+const userList = document.getElementById('userList');
+
+//  "Activity Suggestions" section 
+const hint = document.getElementById('hint');
+
+
+//-------------------------------------------------------------------
 //      CHANGE THE H1 WITH SELECTION INPUT
 //-------------------------------------------------------------------
-const ifXmas = document.getElementById('ifXmas');
 
 //  If Christmas, add countdown clock
 function xmasCountdown() {
@@ -26,10 +64,7 @@ function xmasCountdown() {
     return daysLeft + " Days Until Christmas!";
 }
 
-//  If screen is large
-const title = document.getElementById('title');
-const largeScreenTitle = document.getElementById('lg-title');
-
+//  If screen is large, change header display
 function bigTitle(text) {
     if (screen.width > 1200) {
         title.style.display = 'none';
@@ -37,31 +72,25 @@ function bigTitle(text) {
     }
 }
 
-//  Change Header
+function changeHeaderDisplay(season, imgSource) {
+    h1.innerHTML = season;
+    header.style.backgroundImage = "url('../images/" + imgSource + ".png')";
+    bigTitle(season + " Bucket List");
+}
+
+//  Change Header Function
 function changeHeader() {
-    const h1 = document.getElementById('h1');
-    const header = document.getElementById('header');
     if (selection.value === 'xmas') {
-        h1.innerHTML = "Christmas";
+        changeHeaderDisplay("Christmas", "xmas");
         ifXmas.innerHTML = xmasCountdown();
-        header.style.backgroundImage = "url('../images/xmas.png')";
-        bigTitle("Christmas Bucket List");
     } else if (selection.value === 'winter') {
-        h1.innerHTML = "Winter";
-        header.style.backgroundImage = "url('../images/winter.png')";
-        bigTitle("Winter Bucket List");
+        changeHeaderDisplay("Winter", "winter");
     } else if (selection.value === 'spring') {
-        h1.innerHTML = "Spring";
-        header.style.backgroundImage = "url('../images/spring.png')";
-        bigTitle("Spring Bucket List");
+        changeHeaderDisplay("Spring", "spring");
     } else if (selection.value === 'summer') {
-        h1.innerHTML = "Summer";
-        header.style.backgroundImage = "url('../images/summer.png')";
-        bigTitle("Summer Bucket List");
+        changeHeaderDisplay("Summer", "summer");
     } else if (selection.value === 'fall') {
-        h1.innerHTML = "Fall";
-        header.style.backgroundImage = "url('../images/fall.png')";
-        bigTitle("Fall Bucket List");
+        changeHeaderDisplay("Fall", "fall");
     } else {
         return; 
     }
@@ -70,11 +99,6 @@ function changeHeader() {
 //-------------------------------------------------------------------
 //      CHANGE LIST TITLE BY USER INPUT
 //-------------------------------------------------------------------
-
-const titleForm = document.getElementById('addTitle');
-const titleInput = titleForm.querySelector('input');
-const listHeader = document.getElementById('listHeader');
-
 
 titleForm.addEventListener('submit', (e) => {
     e.preventDefault();
@@ -127,9 +151,6 @@ function applyClassToBucketList() {
 //      ADD A BUCKET LIST ITEM
 //-------------------------------------------------------------------
 
-const activityForm = document.getElementById('addActivity');
-const activityInput = activityForm.querySelector('input');
-
 function createListItem(textSource) {
     const listDiv = document.createElement('div');
     listDiv.classList = "bucketList";
@@ -177,13 +198,9 @@ activityForm.addEventListener('submit', (e) => {
 });
 
 
-
 //-------------------------------------------------------------------
 //      SELECT A SEASON DROPDOWN
 //-------------------------------------------------------------------
-
-const selection = document.getElementById('seasonSelect');
-const hint = document.getElementById('hint');
 
 function addListItems(season, list, seasonClass) {
     if (selection.value === season) {
@@ -237,7 +254,6 @@ selection.addEventListener('change', (e) => {
 //-------------------------------------------------------------------
 //      EDIT AND REMOVE BUTTONS
 //-------------------------------------------------------------------
-const userList = document.getElementById('userList');
 
 userList.addEventListener('click', (e) => {
     if (e.target.tagName === 'BUTTON') {
@@ -270,9 +286,6 @@ userList.addEventListener('click', (e) => {
 //-------------------------------------------------------------------
 //      API: RANDOM BUTTON
 //-------------------------------------------------------------------
-
-const randomActivity = document.getElementById('randomActivity');
-const randomButton = document.getElementById('randomButton');
 
 function requestListener() {
     const data = JSON.parse(this.responseText);
@@ -309,12 +322,8 @@ randomButton.addEventListener('click', ()=> {
     .catch(function(error) {
         console.log('Fetch Error :-S', error);
     });
-}) 
-
-const randomAddToListButton = document.getElementById('randomAddToListButton');
+});
 
 randomAddToListButton.addEventListener('click', () => {
     createListItem(randomActivity.textContent); 
-})
-
-
+});
