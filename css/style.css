@@ -183,27 +183,8 @@ button:active {
     font-size: 2em;
 }
 
-#userList {
-    min-height: 200px;
-    display: flex;
-    flex-wrap: wrap;
-}
-
-.bucketList {
-    width: 230px;
-    min-height: 100px;
-    display: flex;
-    flex-direction: column;
-    margin: 10px auto;
-    padding: 20px;
-    background-color: lightskyblue;
-}
-
-span {
-    margin-bottom: 10%;
-    padding: 20px 10px;
-    font-weight: bold;
-    background-color: #F9F9F0;
+#table-div {
+    margin-bottom: 100px;
 }
 
 input[type=checkbox] {
@@ -211,25 +192,27 @@ input[type=checkbox] {
     margin-left: 10px;
 }
 
-.xmas {
-    background-color: #AB8787;
+.xmas tr:nth-child(odd) {
+    background-color: #f7e6e6;
+    color: white;
 }
 
-.winter {
+.winter tr:nth-child(odd){
     background-color: #D3D4DE;
 }
 
-.spring {
-    background-color: #9B89A9;
+.spring tr:nth-child(odd){
+    background-color: #ecddf8;
 }
 
-.summer {
+.summer tr:nth-child(odd){
     background-color: #EAEEBF;
 }
 
-.fall {
+.fall tr:nth-child(odd){
     background-color: #DCAD84;
 }
+
 
 /*----------------------------------------*/
 /*      Auto-Generated Activities         */

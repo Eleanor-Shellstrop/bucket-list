@@ -43,6 +43,7 @@ const randomAddToListButton = document.getElementById('randomAddToListButton');
 const listHeader = document.getElementById('listHeader');
 
 //  Bucket list area
+const table = document.getElementById('table');
 const tableBody = document.getElementById('table-body');
 
 //  "Activity Suggestions" section 
@@ -70,6 +71,10 @@ function bigTitle(text) {
         title.style.display = 'none';
         largeScreenTitle.innerHTML = text;
     }
+}
+
+if (seasonSelect.value === '' && screen.width > 1200) {
+    bigTitle("Seasonal Bucket List");
 }
 
 function changeHeaderDisplay(season, imgSource) {
@@ -111,18 +116,17 @@ titleForm.addEventListener('submit', (e) => {
 //-------------------------------------------------------------------
 
 function addClass(season) {
-    document.querySelectorAll('.bucketList').forEach(elem => {
-        elem.classList.add(season);
-    }) 
+    // document.querySelectorAll('.bucketList').forEach(element => {
+    //     element.classList.add(season);
+    // }) 
+    table.classList.add(season);
 }
 
 function removeClass(season1, season2, season3, season4) {
-    document.querySelectorAll('.bucketList').forEach(elem => {
-        elem.classList.remove(season1);
-        elem.classList.remove(season2);
-        elem.classList.remove(season3);
-        elem.classList.remove(season4);
-    }) 
+        table.classList.remove(season1);
+        table.classList.remove(season2);
+        table.classList.remove(season3);
+        table.classList.remove(season4);
 }
 
 function applyClassToBucketList() {
@@ -140,7 +144,6 @@ function applyClassToBucketList() {
         removeClass('xmas', 'winter', 'spring', 'fall');
     } else if (selection.value === 'fall') {
         addClass('fall');
-        addClass('summer');
         removeClass('xmas', 'winter', 'spring', 'summer');
     } else {
         return; 
@@ -153,6 +156,7 @@ function applyClassToBucketList() {
 
 function createListItem(textSource) {
     let newRow = document.createElement('tr');
+    newRow.classList = "bucketList";
     
     let newActivity = document.createElement('td');
     newActivity.innerHTML = textSource;
@@ -188,7 +192,7 @@ activityForm.addEventListener('submit', (e) => {
 //      SELECT A SEASON DROPDOWN
 //-------------------------------------------------------------------
 
-function addListItems(season, list, seasonClass) {
+function generateSeasonalActivities(season, list, seasonClass) {
     if (selection.value === season) {
         list.forEach((item)=> {
             let div = document.createElement('div');
@@ -200,7 +204,7 @@ function addListItems(season, list, seasonClass) {
     
 }
 
-function addAnySeason() {
+function generateNonSeasonalActivities() {
     activityAnySeason.forEach((item) => {
         let div = document.createElement('div');
         div.innerHTML = item;
@@ -212,12 +216,12 @@ function addAnySeason() {
 selection.addEventListener('change', (e) => {
     document.getElementById('newItems').innerHTML = '';
     changeHeader();
-    addListItems('xmas', xmasList, 'xmasClass');
-    addListItems('winter', winterList, 'winterClass');
-    addListItems('spring', springList, 'springClass');
-    addListItems('summer', summerList, 'summerClass');
-    addListItems('fall', fallList, 'fallClass'); 
-    addAnySeason();
+    generateSeasonalActivities('xmas', xmasList, 'xmasClass');
+    generateSeasonalActivities('winter', winterList, 'winterClass');
+    generateSeasonalActivities('spring', springList, 'springClass');
+    generateSeasonalActivities('summer', summerList, 'summerClass');
+    generateSeasonalActivities('fall', fallList, 'fallClass'); 
+    generateNonSeasonalActivities();
     if (document.getElementById('seasonSelect').value === 'xmas') {
         ifXmas.display = 'block';
         ifXmas.style.backgroundColor = '#ffffffe8';
