@@ -120,7 +120,17 @@
       <!-- List Section -->
       <div class="container" id="listArea">
           <h2 id="listHeader">My Bucket List</h2>
-          <div id="userList"></div>
+          <div id="table-div">
+            <table id="table" class="table table-striped table-hover">
+                <tbody id="table-body">
+                    <tr>
+                        <th scope="col">Activity</th>
+                        <th scope="col">Done</th>
+                        <th scope="col">Delete</th>    
+                    </tr>
+                </tbody>
+            </table>
+        </div>
       </div>
       <h4>Activity Suggestions</h4>
       <p id="hint">Select a season to generate ideas</p>

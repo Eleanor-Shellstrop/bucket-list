@@ -8,7 +8,7 @@
 }
 
 main {
-    width: 90%;
+    width: 100%;
     margin: 10px auto;
     justify-content: center;
 }
@@ -152,7 +152,11 @@ button:active {
 }
 
 .removeButton { 
-    width: 75px;
+    width: 25px;
+    height: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-color: #DECECE;
 }
 
@@ -166,7 +170,7 @@ button:active {
 /*              LIST AREA                 */
 /*----------------------------------------*/
 #listArea {
-    width: 90%;
+    width: 100%;
     min-height: 200px;
     margin: 10px auto;
     padding: 20px;

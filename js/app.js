@@ -43,7 +43,7 @@ const randomAddToListButton = document.getElementById('randomAddToListButton');
 const listHeader = document.getElementById('listHeader');
 
 //  Bucket list area
-const userList = document.getElementById('userList');
+const tableBody = document.getElementById('table-body');
 
 //  "Activity Suggestions" section 
 const hint = document.getElementById('hint');
@@ -152,43 +152,29 @@ function applyClassToBucketList() {
 //-------------------------------------------------------------------
 
 function createListItem(textSource) {
-    const listDiv = document.createElement('div');
-    listDiv.classList = "bucketList";
+    let newRow = document.createElement('tr');
+    
+    let newActivity = document.createElement('td');
+    newActivity.innerHTML = textSource;
+    newActivity.contentEditable = true;
 
-    const span = document.createElement('span');
-    span.innerText = textSource;
-    listDiv.appendChild(span);
+    let newCheckbox = document.createElement('td');
+    const checkInput = document.createElement('input');
+    checkInput.type = "checkbox";
 
-    const checkDiv = document.createElement('div');
-    checkDiv.classList = "completedCheckboxDiv";
-
-    const completedLabel = document.createElement('label');
-    completedLabel.innerText = "Completed";
-
-    const checkbox = document.createElement('input');
-    checkbox.type = "checkbox";
-
-    const buttonDiv = document.createElement('div');
-    buttonDiv.classList = "listButtons";
-
-    const editButton = document.createElement('button');
-    editButton.classList = "editButton";
-    editButton.innerText = "Edit";
-
+    let newRemoveButton = document.createElement('td');
     const removeButton = document.createElement('button');
     removeButton.classList = "removeButton"
-    removeButton.innerText = "Remove";
+    removeButton.innerHTML = "X";
 
-    document.getElementById('userList').appendChild(listDiv);
-    
-    listDiv.appendChild(checkDiv);
-        checkDiv.appendChild(completedLabel);
-        checkDiv.appendChild(checkbox);
-    
-    listDiv.appendChild(buttonDiv);
-        buttonDiv.appendChild(editButton);
-        buttonDiv.appendChild(removeButton);
-    applyClassToBucketList();
+    newCheckbox.appendChild(checkInput);
+    newRemoveButton.appendChild(removeButton);
+
+    newRow.append(newActivity);
+    newRow.append(newCheckbox);
+    newRow.append(newRemoveButton);
+
+    document.getElementById("table-body").appendChild(newRow);
 }
 
 activityForm.addEventListener('submit', (e) => {
@@ -255,29 +241,14 @@ selection.addEventListener('change', (e) => {
 //      EDIT AND REMOVE BUTTONS
 //-------------------------------------------------------------------
 
-userList.addEventListener('click', (e) => {
+tableBody.addEventListener('click', (e) => {
     if (e.target.tagName === 'BUTTON') {
         const button = e.target;
         const li = button.parentNode.parentNode;
         const userList = li.parentNode;
         
-        if (button.textContent === 'Remove') {
+        if (button.textContent === 'X') {
             userList.removeChild(li);  
-        } else if (button.textContent === 'Edit') {
-            const span = li.firstElementChild;
-            const input = document.createElement('input');
-            input.type = 'text';
-            input.value = span.textContent;
-            li.insertBefore(input, span);
-            li.removeChild(span);
-            button.textContent = 'Save';
-        } else if (button.textContent === 'Save') {
-            const input = li.firstElementChild;
-            const span = document.createElement('span');
-            span.textContent = input.value;
-            li.insertBefore(span, input);
-            li.removeChild(input);
-            button.textContent = 'Edit';
         }
     }
 });
