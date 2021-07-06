@@ -105,22 +105,27 @@ function changeHeader() {
         ifXmas.innerHTML = xmasCountdown();
         addClass(header, 'xmas');
         removeClass(header, 'winter', 'spring', 'summer', 'fall');
+
     } else if (selection.value === 'winter') {
         changeHeaderDisplay('Winter');
         addClass(header, 'winter');
         removeClass(header, 'xmas', 'spring', 'summer', 'fall');
+
     } else if (selection.value === 'spring') {
         changeHeaderDisplay('Spring');
         addClass(header, 'spring');
         removeClass(header, 'xmas', 'winter', 'summer', 'fall');
+
     } else if (selection.value === 'summer') {
         changeHeaderDisplay('Summer');
         addClass(header, 'summer');
         removeClass(header, 'xmas', 'winter', 'spring', 'fall');
+
     } else if (selection.value === 'fall') {
         changeHeaderDisplay('Fall');
         addClass(header, 'fall');
         removeClass(header, 'xmas', 'winter', 'spring', 'summer');
+
     } else {
         return; 
     }
@@ -136,32 +141,37 @@ titleForm.addEventListener('submit', (e) => {
     titleInput.value = '';
 });
 
+
 //-------------------------------------------------------------------
 //      CHANGE BUCKET LIST STYLES
 //-------------------------------------------------------------------
-
-
 
 function applyClassToBucketList() {
     if (selection.value === 'xmas') {
         addClass(table, 'xmas');
         removeClass(table, 'winter', 'spring', 'summer', 'fall');
+
     } else if (selection.value === 'winter') {
         addClass(table, 'winter');
         removeClass(table, 'xmas', 'spring', 'summer', 'fall');
+
     } else if (selection.value === 'spring') {
         addClass(table, 'spring');
         removeClass(table, 'xmas', 'winter', 'summer', 'fall');
+
     } else if (selection.value === 'summer') {
         addClass(table, 'summer');
         removeClass(table, 'xmas', 'winter', 'spring', 'fall');
+
     } else if (selection.value === 'fall') {
         addClass(table, 'fall');
         removeClass(table, 'xmas', 'winter', 'spring', 'summer');
+
     } else {
         return; 
     }
 }
+
 
 //-------------------------------------------------------------------
 //      ADD A BUCKET LIST ITEM
