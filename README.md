@@ -1,6 +1,8 @@
 # Seasonal "Bucket Lists"
 Project by Anne Ensign
 
+DEMO HERE: https://eleanor-shellstrop.github.io/bucket-list/
+
 ## About:
 This project is for Code Louisville's JavaScript Class, Summer 2021.
 
@@ -23,7 +25,7 @@ IN PROGRESS.
   - Layout changes to grid on large screens.
 - At least 5 commits in Git
 - Retrieve data from an external API.
-  - Random activity generator with Bored API (https://www.boredapi.com) in "Find a Random Activity."  
+  - Random activity generator with [Bored API](https://www.boredapi.com) in "Find a Random Activity."  
 - Create an array and populate it with multiple values, display it in the application.
   - Multiple arrays in js folder, modules imported to "app.js."
   - Displayed when "season" is selected from dropdown menu in "Activity Suggestions."
