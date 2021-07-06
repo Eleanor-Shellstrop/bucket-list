@@ -312,6 +312,33 @@ input[type=checkbox] {
 
 
 /*----------------------------------------*/
+/*      Footer                    */
+/*----------------------------------------*/
+
+footer {
+    width: 100%;
+    display: block;
+    padding: 10px 20px;
+    background-color: #F4F5F5;
+}
+
+footer a {
+    text-decoration: none;
+}
+
+footer a:link {
+    color: rgb(99, 1, 99);
+}
+
+footer a:visited {
+    color: #554661;
+}
+
+footer p {
+    margin: 0.5rem;
+}
+
+/*----------------------------------------*/
 /*      Media Queries                     */
 /*----------------------------------------*/
 
@@ -339,6 +366,9 @@ input[type=checkbox] {
         columns: 200px 2;
         -webkit-column-break-inside: avoid;
     }
+    footer {
+        grid-area: foot;
+    }
     body {
         display: grid;
         width: 80%;
@@ -347,7 +377,8 @@ input[type=checkbox] {
         grid-template-areas: 
                 "head head head head"
                 "acc main main main"
-                "acc main main main";
+                "acc main main main"
+                "foot foot foot foot";
         gap: 20px;
         grid-template-columns: 30% 10% 30% 30%;
     }
