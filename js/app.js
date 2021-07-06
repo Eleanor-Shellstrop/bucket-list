@@ -264,7 +264,7 @@ tableBody.addEventListener('click', (e) => {
         const li = button.parentNode.parentNode;
         const userList = li.parentNode;
         
-        if (button.textContent === 'X') {
+        if (button.textContent === 'x') {
             userList.removeChild(li);  
         }
     }
