@@ -7,6 +7,6 @@ export const springList = [
     "Fly a Kite",
     "Go Camping",
     "Visit a Zoo",
-    "make a Birdhouse",
+    "Make a Birdhouse",
     "Visit a Botanical Garden"
 ];

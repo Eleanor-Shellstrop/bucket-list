@@ -264,39 +264,39 @@ input[type=checkbox] {
 
 /* Winter- Secular */
 .winterClass {
-    border: 2px solid teal; 
+    border: 2px solid #D3D4DE; 
 }
 
 .winterClass:hover {
-    background-color: paleturquoise; 
+    background-color: #D3D4DE; 
 
 }
 
 /* Spring */
 .springClass {
-    border: 2px solid darkorchid; 
+    border: 2px solid #ecddf8; 
 }
 
 .springClass:hover {
-    background-color: lavender; 
+    background-color: #ecddf8; 
 }
 
 /* Summer */
 .summerClass {
-    border: 2px solid orange; 
+    border: 2px solid #EAEEBF; 
 }
 
 .summerClass:hover {
-    background-color: lemonchiffon; 
+    background-color: #EAEEBF; 
 }
 
 /* Fall */
 .fallClass {
-    border: 2px solid maroon; 
+    border: 2px solid #DCAD84; 
 }
 
 .fallClass:hover {
-    background-color: peru; 
+    background-color: #DCAD84; 
     color: white;
 }
 
