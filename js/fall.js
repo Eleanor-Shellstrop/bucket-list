@@ -6,5 +6,7 @@ export const fallList = [
     "Watch a Scary Movie",
     "U-Pick Pumpkins",
     "Take a Ghost Tour",
-    "Jump into a Pile of Leaves"
+    "Jump into a Pile of Leaves",
+    "Knit a Scarf",
+    "Go to a Football Game"
 ];

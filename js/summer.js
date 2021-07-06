@@ -1,6 +1,12 @@
 export const summerList = [
-    "Swimming in Lake",
+    "Swim in a Lake",
     "Go Fishing",
     "Pick Summer Produce",
-    "Make Homemade Lemonade"
+    "Make Homemade Lemonade",
+    "Visit a Beach",
+    "Make Hommeade Popcicles",
+    "Go to a Farmer's Market",
+    "Watch Fireflies",
+    "Go to a Festival",
+    "Have a Water Balloon Fight"
 ];
