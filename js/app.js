@@ -51,6 +51,22 @@ const hint = document.getElementById('hint');
 
 
 //-------------------------------------------------------------------
+//      REUSABLE CLASS CHANGE FUNCTIONS
+//-------------------------------------------------------------------
+
+function addClass(element, season) {
+    element.classList.add(season);
+}
+
+function removeClass(element, season1, season2, season3, season4) {
+        element.classList.remove(season1);
+        element.classList.remove(season2);
+        element.classList.remove(season3);
+        element.classList.remove(season4);
+}
+
+
+//-------------------------------------------------------------------
 //      CHANGE THE H1 WITH SELECTION INPUT
 //-------------------------------------------------------------------
 
@@ -77,25 +93,34 @@ if (seasonSelect.value === '' && screen.width > 1200) {
     bigTitle("Seasonal Bucket List");
 }
 
-function changeHeaderDisplay(season, imgSource) {
+function changeHeaderDisplay(season) {
     h1.innerHTML = season;
-    header.style.backgroundImage = "url('../images/" + imgSource + ".png')";
     bigTitle(season + " Bucket List");
 }
 
 //  Change Header Function
 function changeHeader() {
     if (selection.value === 'xmas') {
-        changeHeaderDisplay("Christmas", "xmas");
+        changeHeaderDisplay('Christmas');
         ifXmas.innerHTML = xmasCountdown();
+        addClass(header, 'xmas');
+        removeClass(header, 'winter', 'spring', 'summer', 'fall');
     } else if (selection.value === 'winter') {
-        changeHeaderDisplay("Winter", "winter");
+        changeHeaderDisplay('Winter');
+        addClass(header, 'winter');
+        removeClass(header, 'xmas', 'spring', 'summer', 'fall');
     } else if (selection.value === 'spring') {
-        changeHeaderDisplay("Spring", "spring");
+        changeHeaderDisplay('Spring');
+        addClass(header, 'spring');
+        removeClass(header, 'xmas', 'winter', 'summer', 'fall');
     } else if (selection.value === 'summer') {
-        changeHeaderDisplay("Summer", "summer");
+        changeHeaderDisplay('Summer');
+        addClass(header, 'summer');
+        removeClass(header, 'xmas', 'winter', 'spring', 'fall');
     } else if (selection.value === 'fall') {
-        changeHeaderDisplay("Fall", "fall");
+        changeHeaderDisplay('Fall');
+        addClass(header, 'fall');
+        removeClass(header, 'xmas', 'winter', 'spring', 'summer');
     } else {
         return; 
     }
@@ -115,36 +140,24 @@ titleForm.addEventListener('submit', (e) => {
 //      CHANGE BUCKET LIST STYLES
 //-------------------------------------------------------------------
 
-function addClass(season) {
-    // document.querySelectorAll('.bucketList').forEach(element => {
-    //     element.classList.add(season);
-    // }) 
-    table.classList.add(season);
-}
 
-function removeClass(season1, season2, season3, season4) {
-        table.classList.remove(season1);
-        table.classList.remove(season2);
-        table.classList.remove(season3);
-        table.classList.remove(season4);
-}
 
 function applyClassToBucketList() {
     if (selection.value === 'xmas') {
-        addClass('xmas');
-        removeClass('winter', 'spring', 'summer', 'fall');
+        addClass(table, 'xmas');
+        removeClass(table, 'winter', 'spring', 'summer', 'fall');
     } else if (selection.value === 'winter') {
-        addClass('winter');
-        removeClass('xmas', 'spring', 'summer', 'fall');
+        addClass(table, 'winter');
+        removeClass(table, 'xmas', 'spring', 'summer', 'fall');
     } else if (selection.value === 'spring') {
-        addClass('spring');
-        removeClass('xmas', 'winter', 'summer', 'fall');
+        addClass(table, 'spring');
+        removeClass(table, 'xmas', 'winter', 'summer', 'fall');
     } else if (selection.value === 'summer') {
-        addClass('summer');
-        removeClass('xmas', 'winter', 'spring', 'fall');
+        addClass(table, 'summer');
+        removeClass(table, 'xmas', 'winter', 'spring', 'fall');
     } else if (selection.value === 'fall') {
-        addClass('fall');
-        removeClass('xmas', 'winter', 'spring', 'summer');
+        addClass(table, 'fall');
+        removeClass(table, 'xmas', 'winter', 'spring', 'summer');
     } else {
         return; 
     }

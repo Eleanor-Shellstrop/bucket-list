@@ -57,6 +57,26 @@ header h1 {
     padding: 2%;
 }
 
+header.xmas {
+    background-image: url('../images/xmas.png');
+}
+
+header.winter {
+    background-image: url('../images/winter.png');
+}
+
+header.spring {
+    background-image: url('../images/spring.png');
+}
+
+header.summer {
+    background-image: url('../images/summer.png');
+}
+
+header.fall {
+    background-image: url('../images/fall.png');
+}
+
 /*----------------------------------------*/
 /*              FORMS                     */
 /*----------------------------------------*/
