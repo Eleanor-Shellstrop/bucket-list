@@ -12,11 +12,22 @@ This is an app to make customizable, printable lists for all seasons. Included a
 
 IN PROGRESS.
 
+### Special Instructions:
+- A server or proxy is needed to run this project since modules are imported.
+  - Demo is also available on Git Pages (see above).
+  - Try Live Server Extension.
+  - [Link to instructions on setting up a local testing server.](https://developer.mozilla.org/en-US/docs/Learn/Common_questions/set_up_a_local_testing_server "MDN")
+
 ### Project Requirements Met:
-- Retrieve data from an external API and display data in your app (such as with fetch() or with AJAX) 
-  - Random activity generator with Bored API (https://www.boredapi.com)  
-- Create an array, dictionary or list, populate it with multiple values, retrieve at least one value, and use or display it in your application.
-  - Multiple arrays in js folder, imported to app.js.
-  - Displayed when "season" is selected from dropdown menu.
-- Calculate and display data based on an external factor (ex: get the current date, and display how many days remaining until some event)
+- Responsive Design
+  - Layout changes to grid on large screens.
+- At least 5 commits in Git
+- Retrieve data from an external API.
+  - Random activity generator with Bored API (https://www.boredapi.com) in "Find a Random Activity."  
+- Create an array and populate it with multiple values, display it in the application.
+  - Multiple arrays in js folder, modules imported to "app.js."
+  - Displayed when "season" is selected from dropdown menu in "Activity Suggestions."
+- Calculate and display data based on an external factor (ex: get the current date, and display how many days remaining until some event).
   - When "Christmas" is chosen for the season, a countdown clock appears in the header telling the user how many days until Christmas
+- Other:
+  - Special printing that only displays header, Bucket List area and checkboxes.
