@@ -316,11 +316,8 @@ input[type=checkbox] {
 /*----------------------------------------*/
 
 @media only print {
-    body {
-        visibility: hidden;
-    }
-    #listArea {
-        visibility: visible;
+    .noPrint {
+        display: none;
     }
 }
 

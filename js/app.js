@@ -181,7 +181,7 @@ function createListItem(textSource) {
 
     let newRemoveButton = document.createElement('td');
     const removeButton = document.createElement('button');
-    removeButton.classList = "removeButton"
+    removeButton.classList = "removeButton noPrint"
     removeButton.innerHTML = "X";
 
     newCheckbox.appendChild(checkInput);
