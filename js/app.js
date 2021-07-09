@@ -261,7 +261,7 @@ selection.addEventListener('change', (e) => {
         });
     }
     applyClassToBucketList();
-    hint.innerHTML = '';
+    hint.textContent = 'Click to add to your list';
 });
 
 //-------------------------------------------------------------------

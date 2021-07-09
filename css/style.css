@@ -47,7 +47,7 @@ header h1 {
     padding: 5px;
     font-family: 'Cookie', cursive;
     font-size: 4.5em;
-    color: white;
+    color: rgb(155, 146, 146);
     text-shadow:    -1px -1px 1px dimgray, 
                     2px 2px 7px black, 
                     1px 1px 1px black;
