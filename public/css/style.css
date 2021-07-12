@@ -169,6 +169,11 @@ button:active {
     min-width: 90px;
 }
 
+.googleLogin {
+    max-width: 100px;
+    max-height: 75px;
+}
+
 .editButton {
     width: 50px;
     margin: 5px 5px 0 0;

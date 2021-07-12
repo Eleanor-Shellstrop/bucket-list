@@ -2,6 +2,7 @@
 //      IMPORTS
 //-------------------------------------------------------------------
 
+
 import { xmasList } from "./xmas.js";
 import { winterList } from "./winter.js";
 import { springList } from "./spring.js";
@@ -48,6 +49,27 @@ const tableBody = document.getElementById('table-body');
 
 //  "Activity Suggestions" section 
 const hint = document.getElementById('hint');
+
+const googleLogin = document.getElementById('googleLogin');
+
+//-------------------------------------------------------------------
+//      LOGIN
+//-------------------------------------------------------------------
+document.addEventListener("DOMContentLoaded", event => {
+    const app = firebase.app();
+});
+
+googleLogin.addEventListener('click', () => {
+    const provider = new firebase.auth.GoogleAuthProvider();
+        firebase.auth().signInWithPopup(provider)
+            .then(result => {
+                const user = result.user;
+                document.writer(`Hello ${user.displayName}`);
+                console.log(user);
+            })
+            .catch(console.log);
+}) 
+    
 
 
 //-------------------------------------------------------------------
