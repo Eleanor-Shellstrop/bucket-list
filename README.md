@@ -12,7 +12,7 @@ Inspired to have more fun and enjoy being "in the moment," my family made our ow
 
 This is an app to make customizable, printable lists for all seasons. Included are some generated activities to add, but users can write in their own as well. 
 
-IN PROGRESS.
+## IN PROGRESS, WORKING WITH FIREBASE.
 
 ### Special Instructions:
 - A server or proxy is needed to run this project since modules are imported.
