@@ -95,6 +95,10 @@ form {
   background-color: #dadcdb;  
 }
 
+#login-form {
+    display: initial;
+}
+
 input {
     margin: 10px auto;
     border: 1px solid darkslategray;
@@ -169,7 +173,7 @@ button:active {
     min-width: 90px;
 }
 
-.googleLogin {
+#googleLogin {
     max-width: 100px;
     max-height: 75px;
 }
@@ -360,6 +364,9 @@ footer p {
         margin-top: 20px;
         grid-area: head;
     }
+    nav {
+        grid-area: nav;
+    }
     .accordian {
         margin: 10px 20px;
         grid-area: acc;
@@ -381,6 +388,7 @@ footer p {
         margin: 0 auto;
         grid-template-areas: 
                 "head head head head"
+                "nav nav nav nav"
                 "acc main main main"
                 "acc main main main"
                 "foot foot foot foot";

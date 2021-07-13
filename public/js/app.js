@@ -50,15 +50,37 @@ const tableBody = document.getElementById('table-body');
 //  "Activity Suggestions" section 
 const hint = document.getElementById('hint');
 
+//  Google Login Button
 const googleLogin = document.getElementById('googleLogin');
 
 //-------------------------------------------------------------------
 //      LOGIN
 //-------------------------------------------------------------------
+
+firebase.auth().onAuthStateChanged((user) => {
+    if (user) {
+      // User is signed in, see docs for a list of available properties
+      // https://firebase.google.com/docs/reference/js/firebase.User
+      const user = firebase.auth().currentUser;
+      var uid = user.uid;
+
+      if (user != null) {
+          let emailID = user.email;
+          document.getElementById('user-logged-in').innerHTML = "Welcome " + emailID;
+      }
+      
+    } else {
+      // User is signed out
+      // ...
+    }
+  });
+
+
 document.addEventListener("DOMContentLoaded", event => {
     const app = firebase.app();
 });
 
+//  Google Login
 googleLogin.addEventListener('click', () => {
     const provider = new firebase.auth.GoogleAuthProvider();
         firebase.auth().signInWithPopup(provider)
@@ -69,8 +91,30 @@ googleLogin.addEventListener('click', () => {
             })
             .catch(console.log);
 }) 
-    
+  
+//  Email Login
+function emailLogin(){
+    let userEmail = document.getElementById('email-field').value;
+    let userPassword = document.getElementById('password-field').value;
+    firebase.auth().createUserWithEmailAndPassword(userEmail, userPassword)
+        .then((userCredential) => {
+            // Signed in 
+            var user = userCredential.user;
+            // ...
+        })
+        .catch((error) => {
+            var errorCode = error.code;
+            var errorMessage = error.message;
+            // ..
+            window.alert("Error : " + errorMessage);
+        });
+}
 
+const emailSubmitLoginButton = document.getElementById('email-submit-btn');
+
+emailSubmitLoginButton.addEventListener('click', () => {
+    emailLogin();
+});
 
 //-------------------------------------------------------------------
 //      REUSABLE CLASS CHANGE FUNCTIONS
