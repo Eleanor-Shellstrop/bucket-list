@@ -78,6 +78,17 @@ header.fall {
 }
 
 /*----------------------------------------*/
+/*              NAVBAR                    */
+/*----------------------------------------*/
+#nav-items {
+    display: inline-flex;
+}
+
+nav li {
+    margin: 5px 20px;
+}
+
+/*----------------------------------------*/
 /*              FORMS                     */
 /*----------------------------------------*/
 form,
@@ -171,6 +182,11 @@ button:active {
 
 .accordian button {
     min-width: 90px;
+}
+
+#nav-items {
+    list-style: none;
+    list-style-type: none;
 }
 
 #googleLogin {
