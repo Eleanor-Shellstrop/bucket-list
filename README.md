@@ -1,7 +1,7 @@
 # Seasonal "Bucket Lists"
 Project by Anne Ensign
 
-DEMO HERE: https://eleanor-shellstrop.github.io/bucket-list/
+DEMO HERE: https://bucket-lists-47294.web.app
 
 ## About:
 This project is for Code Louisville's JavaScript Class, Summer 2021.
@@ -32,4 +32,5 @@ This is an app to make customizable, printable lists for all seasons. Included a
 - Calculate and display data based on an external factor (ex: get the current date, and display how many days remaining until some event).
   - When "Christmas" is chosen for the season, a countdown clock appears in the header telling the user how many days until Christmas
 - Other:
+  - Firebase: Initialized Firebase the project for users to create profiles. 
   - Special printing that only displays header, Bucket List area and checkboxes.

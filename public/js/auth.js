@@ -29,6 +29,7 @@ const accountDetails = document.getElementById('account-details');
 
 firebase.auth().onAuthStateChanged(user => {
     if (user) {
+        console.log(user);
         const  html = `
             <div>Logged in as ${user.email}</div>
         `;
@@ -55,9 +56,11 @@ signupForm.addEventListener('submit', (e) => {
 
     const email = signupForm['signup-email'].value;
     const password = signupForm['signup-password'].value;
+    user.displayName = signupForm['signup-displayname'].value;
 
     firebase.auth().createUserWithEmailAndPassword(email, password)
         .then(cred => {
+            
             const signupModal = document.querySelector('#modal-signup');
             //TODO: Hide modal and successful signup message
             signupForm.reset();

@@ -82,11 +82,13 @@ header.fall {
 /*----------------------------------------*/
 #nav-items {
     display: inline-flex;
+    padding-left: 0px !important;
 }
 
 nav li {
     margin: 5px 20px;
 }
+
 
 /*----------------------------------------*/
 /*              FORMS                     */
