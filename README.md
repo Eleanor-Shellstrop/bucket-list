@@ -1,7 +1,13 @@
 # Seasonal "Bucket Lists"
 Project by Anne Ensign
 
-DEMO HERE: https://bucket-lists-47294.web.app
+## Note For Mentor:
+You will not be able to run this project locally since it is hosted by Firebase and deployed on a live page. 
+
+Please review my code in the "Public" files and note the features listed below that meet requirements.
+
+Then, visit my webpage to verify the features are working: 
+https://bucket-lists-47294.web.app
 
 ## About:
 This project is for Code Louisville's JavaScript Class, Summer 2021.
@@ -12,25 +18,27 @@ Inspired to have more fun and enjoy being "in the moment," my family made our ow
 
 This is an app to make customizable, printable lists for all seasons. Included are some generated activities to add, but users can write in their own as well. 
 
-## IN PROGRESS, WORKING WITH FIREBASE.
 
 ### Special Instructions:
-- A server or proxy is needed to run this project since modules are imported.
-  - Demo is also available on Git Pages (see above).
-  - Try Live Server Extension.
-  - [Link to instructions on setting up a local testing server.](https://developer.mozilla.org/en-US/docs/Learn/Common_questions/set_up_a_local_testing_server "MDN")
+- Firebase securities will not allow anyone to run or edit this file without my authorization. 
 
 ### Project Requirements Met:
 - Responsive Design
   - Layout changes to grid on large screens.
-- At least 5 commits in Git
-- Retrieve data from an external API.
+- At least 5 commits in Git.
+- At least 3 features as listed in the syllabus.
+
+### Features:
+1. Retrieve data from an external API.
   - Random activity generator with [Bored API](https://www.boredapi.com) in "Find a Random Activity."  
-- Create an array and populate it with multiple values, display it in the application.
+2. Create an array and populate it with multiple values, display it in the application.
+  - Node.JS reads the modules.
   - Multiple arrays in js folder, modules imported to "app.js."
-  - Displayed when "season" is selected from dropdown menu in "Activity Suggestions."
-- Calculate and display data based on an external factor (ex: get the current date, and display how many days remaining until some event).
+  - Node.JS reads the modules.
+  - New "Activity Suggestions" appear depending on the season selected. 
+3. Calculate and display data based on an external factor (ex: get the current date, and display how many days remaining until some event).
   - When "Christmas" is chosen for the season, a countdown clock appears in the header telling the user how many days until Christmas
-- Other:
-  - Firebase: Initialized Firebase the project for users to create profiles. 
+4. Other:
+  - Firebase: Initialized Firebase the project for users to create profiles.
+    - If a user makes an account, it will appear in my Firebase console.
   - Special printing that only displays header, Bucket List area and checkboxes.
