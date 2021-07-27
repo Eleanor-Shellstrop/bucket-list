@@ -253,19 +253,28 @@ selection.addEventListener('change', (e) => {
         ifXmas.innerHTML = '';
         ifXmas.style.backgroundColor = 'transparent';
     }
-    const listItem = document.getElementsByClassName('listItems');
-    // Allows user to click and add to list
-    for (let i = 0; i < listItem.length; i++) {
-        listItem[i].addEventListener('click', ()=> {
-            createListItem(listItem[i].innerHTML);
-        });
-    }
+
+    addSuggestedActivity();
+    
     applyClassToBucketList();
     hint.textContent = 'Click to add to your list';
 });
 
+
+// Allows user to click and add to list
+function addSuggestedActivity() {
+    const listItem = document.getElementsByClassName('listItems');
+
+    for (let i = 0; i < listItem.length; i++) {
+        listItem[i].addEventListener('click', ()=> {
+            createListItem(listItem[i].innerHTML);
+            console.log(listItem[i]);
+        });
+    }
+}
+
 //-------------------------------------------------------------------
-//      EDIT AND REMOVE BUTTONS
+//      REMOVE BUTTONS
 //-------------------------------------------------------------------
 
 tableBody.addEventListener('click', (e) => {
