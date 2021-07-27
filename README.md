@@ -32,7 +32,6 @@ This is an app to make customizable, printable lists for all seasons. Included a
 1. Retrieve data from an external API.
      - Random activity generator with [Bored API](https://www.boredapi.com) in "Find a Random Activity."  
 2. Create an array and populate it with multiple values, display it in the application.
-     - Node.JS reads the modules.
      - Multiple arrays in js folder, modules imported to "app.js."
      - Node.JS reads the modules.
      - New "Activity Suggestions" appear depending on the season selected. 
