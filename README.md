@@ -30,15 +30,15 @@ This is an app to make customizable, printable lists for all seasons. Included a
 
 ### Features:
 1. Retrieve data from an external API.
-  - Random activity generator with [Bored API](https://www.boredapi.com) in "Find a Random Activity."  
+     - Random activity generator with [Bored API](https://www.boredapi.com) in "Find a Random Activity."  
 2. Create an array and populate it with multiple values, display it in the application.
-  - Node.JS reads the modules.
-  - Multiple arrays in js folder, modules imported to "app.js."
-  - Node.JS reads the modules.
-  - New "Activity Suggestions" appear depending on the season selected. 
+     - Node.JS reads the modules.
+     - Multiple arrays in js folder, modules imported to "app.js."
+     - Node.JS reads the modules.
+     - New "Activity Suggestions" appear depending on the season selected. 
 3. Calculate and display data based on an external factor (ex: get the current date, and display how many days remaining until some event).
-  - When "Christmas" is chosen for the season, a countdown clock appears in the header telling the user how many days until Christmas
+     - When "Christmas" is chosen for the season, a countdown clock appears in the header telling the user how many days until Christmas
 4. Other:
-  - Firebase: Initialized Firebase the project for users to create profiles.
-    - If a user makes an account, it will appear in my Firebase console.
-  - Special printing that only displays header, Bucket List area and checkboxes.
+     - Firebase: Initialized Firebase the project for users to create profiles.
+       - If a user makes an account, it will appear in my Firebase console.
+     - Special printing that only displays header, Bucket List area and checkboxes.
