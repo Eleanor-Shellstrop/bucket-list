@@ -17,6 +17,12 @@ h2 {
     color: #3E3347;
 }
 
+h3 {
+    margin: 10px 50%;
+    font-family: 'Cookie', cursive;
+    font-size: 2rem;
+}
+
 h4 {
     font-size: 1.2em;
     padding-top: 20px;
@@ -89,6 +95,11 @@ nav li {
     margin: 5px 20px;
 }
 
+#menuHeader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
 /*----------------------------------------*/
 /*              FORMS                     */

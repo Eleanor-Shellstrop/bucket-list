@@ -268,7 +268,7 @@ function addSuggestedActivity() {
     for (let i = 0; i < listItem.length; i++) {
         listItem[i].addEventListener('click', ()=> {
             createListItem(listItem[i].innerHTML);
-            console.log(listItem[i]);
+            listItem[i].innerHTML = 'Added!';
         });
     }
 }
