@@ -95,10 +95,15 @@ nav li {
     margin: 5px 20px;
 }
 
+/*----------------------------------------*/
+/*              MENU                      */
+/*----------------------------------------*/
+
 #menuHeader {
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: #F9F9F0;
 }
 
 /*----------------------------------------*/
@@ -240,9 +245,11 @@ button:active {
     background-color: #F9F9F0;
 }
 
-#listArea h2 {
+#listHeader {
     font-family: 'Cookie', cursive;
     font-size: 2em;
+    border-bottom: 1px solid lightgrey;
+    padding: 20px 0px;
 }
 
 #table-div {
