@@ -6,24 +6,6 @@ const loggedOutClass = document.querySelectorAll('.logged-out');
 const loggedInClass = document.querySelectorAll('.logged-in');
 const accountDetails = document.getElementById('account-details');
 
-// const setupUI = (user) => {
-//     if (user) {
-//         const  html = `
-//             <div>Logged in as ${this.email}</div>
-//         `;
-//         accountDetails.innerHTML = html;
-
-//         loggedInClass.forEach(item => item.style.display = 'block');
-//         loggedOutClass.forEach(item => item.style.display = 'none');
-//     } else {
-//         accountDetails.innerHTML = '';
-
-//         loggedInClass.forEach(item => item.style.display = 'none');
-//         loggedOutClass.forEach(item => item.style.display = 'block');
-//     }
-// };
-
-
 // ---------------------------------------------------------------------------------
 // Listen for auth status changes
 
@@ -56,14 +38,10 @@ signupForm.addEventListener('submit', (e) => {
 
     const email = signupForm['signup-email'].value;
     const password = signupForm['signup-password'].value;
-    user.displayName = signupForm['signup-displayname'].value;
 
     firebase.auth().createUserWithEmailAndPassword(email, password)
         .then(cred => {
-            
             const signupModal = document.querySelector('#modal-signup');
-            //TODO: Hide modal and successful signup message
-            signupForm.reset();
         });
 });
 
@@ -83,8 +61,6 @@ loginForm.addEventListener('click', (e) => {
     .then((userCredential) => {
         // Signed in
         var user = userCredential.user;
-
-        //TODO: Hide modal and successful login message
         loginForm.reset();
     })
     .catch((error) => {
@@ -101,11 +77,7 @@ const logout = document.querySelector('#logout');
 
 logout.addEventListener('click', (e) => {
     e.preventDefault();
-    firebase.auth().signOut()
-        .then(() => {
-         
-            //TODO: Hide modal and successful logout message
-        });
+    firebase.auth().signOut();
 });
 
 
