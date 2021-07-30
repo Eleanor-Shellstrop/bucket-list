@@ -2,7 +2,6 @@
 //      IMPORTS
 //-------------------------------------------------------------------
 
-
 import { xmasList } from "./xmas.js";
 import { winterList } from "./winter.js";
 import { springList } from "./spring.js";
